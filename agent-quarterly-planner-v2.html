@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Real Estate Agent Quarterly Success Planner — V2</title>
+<style>
+
+/* ══════════════════════════════════════
+   PRINT / PAGE SETUP
+══════════════════════════════════════ */
+@page {
+  size: letter portrait;
+  margin: 0.65in 0.75in 0.65in 1.0in;
+}
+@page :right {
+  margin: 0.65in 1.0in 0.65in 0.75in;
+}
+@media print {
+  body { background: white !important; }
+  .no-print { display: none !important; }
+}
+
+/* ══════════════════════════════════════
+   GLOBAL
+══════════════════════════════════════ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 10pt;
+  color: #1a1a1a;
+  background: #e8e8e8;
+  line-height: 1.4;
+}
+
+/* ══════════════════════════════════════
+   PAGE SHELL
+══════════════════════════════════════ */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  background: white;
+  margin: 0 auto 0.3in;
+  padding: 0.65in 0.75in 0.65in 1.0in;
+  page-break-after: always;
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { margin-bottom: 0; }
+
+.page-num {
+  position: absolute;
+  bottom: 0.35in;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 7.5pt;
+  color: #aaa;
+  font-family: Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* ══════════════════════════════════════
+   COVER PAGE
+══════════════════════════════════════ */
+.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0;
+}
+.cover-top {
+  border-bottom: 3px solid #1a2e1a;
+  padding-bottom: 0.25in;
+  margin-bottom: 0.3in;
+}
+.cover-badge {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4a8c3f;
+  margin-bottom: 0.18in;
+}
+.cover h1 {
+  font-size: 36pt;
+  font-weight: 700;
+  color: #1a2e1a;
+  line-height: 1.05;
+  margin-bottom: 0.12in;
+}
+.cover h2 {
+  font-size: 14pt;
+  font-weight: 400;
+  color: #555;
+  font-style: italic;
+}
+.cover-mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2in;
+}
+.owner-block {
+  border: 1.5pt solid #1a2e1a;
+  padding: 0.2in 0.25in;
+}
+.owner-block .ob-label {
+  font-family: Arial, sans-serif;
+  font-size: 7pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.08in;
+}
+.owner-line {
+  border-bottom: 1pt solid #ccc;
+  height: 0.22in;
+  margin-bottom: 0.12in;
+}
+.owner-line:last-child { margin-bottom: 0; }
+.owner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.15in;
+  margin-top: 0.1in;
+}
+.cover-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1in;
+}
+.cover-pillar {
+  border-top: 2pt solid #4a8c3f;
+  padding-top: 0.08in;
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1a2e1a;
+}
+.cover-pillar span {
+  display: block;
+  font-size: 9pt;
+  font-weight: 400;
+  color: #666;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 0.04in;
+}
+.cover-bottom {
+  border-top: 1pt solid #ddd;
+  padding-top: 0.15in;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cover-sources {
+  font-family: Arial, sans-serif;
+  font-size: 7pt;
+  color: #aaa;
+  line-height: 1.6;
+}
+.cover-wbn {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: #4a8c3f;
+  text-align: right;
+  letter-spacing: 0.5px;
+}
+
+/* ══════════════════════════════════════
+   HOW TO USE PAGE
+══════════════════════════════════════ */
+.how-to h3 {
+  font-family: Arial, sans-serif;
+  font-size: 7pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4a8c3f;
+  margin-bottom: 0.06in;
+}
+.how-to h2 {
+  font-size: 20pt;
+  color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in;
+  margin-bottom: 0.2in;
+}
+.wbn-callout {
+  background: #1a2e1a;
+  color: white;
+  padding: 0.18in 0.22in;
+  margin-bottom: 0.2in;
+}
+.wbn-callout .wbn-headline {
+  font-size: 13pt;
+  font-weight: 700;
+  margin-bottom: 0.06in;
+  color: #7fc47a;
+}
+.wbn-callout p {
+  font-size: 9pt;
+  line-height: 1.55;
+  opacity: 0.9;
+}
+.how-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.18in;
+  margin-bottom: 0.2in;
+}
+.how-card {
+  border: 1pt solid #ddd;
+  padding: 0.14in;
+}
+.how-card .hc-num {
+  font-family: Arial, sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+  color: #d0e8ce;
+  float: left;
+  margin-right: 0.08in;
+  line-height: 1;
+}
+.how-card .hc-title {
+  font-family: Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #1a2e1a;
+  margin-bottom: 0.04in;
+}
+.how-card p { font-size: 8.5pt; line-height: 1.5; color: #444; }
+.legend-row {
+  display: flex; flex-wrap: wrap; gap: 0.1in 0.2in;
+  margin-bottom: 0.15in;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 0.06in;
+  font-family: Arial, sans-serif; font-size: 8pt;
+}
+.leg-box {
+  width: 14pt; height: 10pt;
+  display: inline-block;
+}
+.symbol-guide {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1in;
+  border-top: 1pt solid #eee;
+  padding-top: 0.12in;
+}
+.sym-item {
+  display: flex; gap: 0.06in; align-items: center;
+  font-family: Arial, sans-serif; font-size: 8pt;
+}
+.sym { font-size: 11pt; width: 14pt; }
+
+/* ══════════════════════════════════════
+   PRINCIPLES PAGE
+══════════════════════════════════════ */
+.principles-page h2 {
+  font-size: 20pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in; margin-bottom: 0.18in;
+}
+.prin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.14in;
+  margin-bottom: 0.2in;
+}
+.prin-card {
+  border-left: 3pt solid #4a8c3f;
+  padding: 0.1in 0.12in;
+}
+.prin-card .pc-num {
+  font-family: Arial, sans-serif;
+  font-size: 7pt; font-weight: 700;
+  color: #4a8c3f; letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 0.03in;
+}
+.prin-card .pc-title {
+  font-family: Arial, sans-serif;
+  font-size: 9.5pt; font-weight: 700;
+  color: #1a2e1a; margin-bottom: 0.04in;
+}
+.prin-card p { font-size: 8pt; color: #444; line-height: 1.5; }
+.coaches-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1in;
+  border-top: 1pt solid #eee;
+  padding-top: 0.14in;
+}
+.coach-card {
+  border-top: 2pt solid;
+  padding-top: 0.08in;
+}
+.coach-card:nth-child(1) { border-color: #c0392b; }
+.coach-card:nth-child(2) { border-color: #27ae60; }
+.coach-card:nth-child(3) { border-color: #e67e22; }
+.coach-card:nth-child(4) { border-color: #8e44ad; }
+.coach-card .cc-name {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px; margin-bottom: 0.04in; color: #1a2e1a;
+}
+.coach-card .cc-tagline {
+  font-size: 8pt; font-style: italic;
+  color: #555; margin-bottom: 0.06in; line-height: 1.4;
+}
+.coach-card ul {
+  padding-left: 0.12in; font-size: 7.5pt;
+  color: #444; line-height: 1.6;
+}
+
+/* ══════════════════════════════════════
+   QUARTERLY GOALS PAGE
+══════════════════════════════════════ */
+.goals-page h2 {
+  font-size: 20pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in; margin-bottom: 0.18in;
+}
+.goals-banner {
+  background: #1a2e1a; color: white;
+  padding: 0.12in 0.18in; margin-bottom: 0.18in;
+  font-family: Arial, sans-serif;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.goals-banner .gb-label { font-size: 7.5pt; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
+.goals-banner .gb-val { font-size: 14pt; font-weight: 700; color: #7fc47a; min-width: 1.5in; border-bottom: 1pt solid #7fc47a; }
+.goals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.15in;
+  margin-bottom: 0.15in;
+}
+.goals-section {
+  border: 1pt solid #ddd; padding: 0.14in;
+}
+.goals-section .gs-title {
+  font-family: Arial, sans-serif;
+  font-size: 8pt; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #1a2e1a; border-bottom: 1pt solid #eee;
+  padding-bottom: 0.06in; margin-bottom: 0.1in;
+}
+.goal-row {
+  display: flex; align-items: center;
+  border-bottom: 0.5pt solid #f0f0f0;
+  padding: 0.05in 0;
+  font-size: 8.5pt;
+  gap: 0.08in;
+}
+.goal-row .gr-label { flex: 0 0 1.4in; color: #555; font-size: 8pt; }
+.goal-line { flex: 1; border-bottom: 1pt dotted #bbb; height: 0.18in; }
+.magic-formula {
+  border: 1.5pt solid #4a8c3f;
+  padding: 0.14in;
+  margin-bottom: 0.15in;
+  background: #f5fff4;
+}
+.magic-formula .mf-title {
+  font-family: Arial, sans-serif; font-size: 8.5pt; font-weight: 700;
+  color: #1a2e1a; text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 0.08in;
+}
+.mf-equation {
+  font-size: 11pt; text-align: center;
+  font-family: Arial, sans-serif; color: #1a2e1a;
+  letter-spacing: 1px; margin-bottom: 0.08in;
+}
+.mf-fill {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.1in;
+}
+.mf-box {
+  text-align: center; border: 0.5pt solid #ccc; padding: 0.06in;
+}
+.mf-box .mb-label { font-family: Arial, sans-serif; font-size: 7pt; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.mf-box .mb-line { border-bottom: 1pt solid #bbb; margin: 0.04in auto 0; width: 0.8in; height: 0.18in; }
+
+/* ══════════════════════════════════════
+   PARTNER ROSTER
+══════════════════════════════════════ */
+.roster-page h2 {
+  font-size: 20pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in; margin-bottom: 0.18in;
+}
+.roster-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.15in;
+}
+.tier-table { width: 100%; border-collapse: collapse; margin-bottom: 0.05in; }
+.tier-table caption {
+  font-family: Arial, sans-serif; font-size: 8pt; font-weight: 700;
+  text-align: left; padding: 0.06in 0.08in;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: white;
+}
+.tier-table caption.cap-a { background: #1a2e1a; }
+.tier-table caption.cap-b { background: #27ae60; }
+.tier-table caption.cap-c { background: #e67e22; }
+.tier-table th {
+  font-family: Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  background: #f5f5f5; padding: 0.05in 0.08in;
+  border: 0.5pt solid #ddd; text-align: left;
+}
+.tier-table td {
+  border: 0.5pt solid #ddd; padding: 0.06in 0.08in;
+  font-size: 8pt; height: 0.25in;
+}
+.tier-table td.name-cell { width: 1.4in; }
+.tier-table td.phone-cell { width: 1in; }
+.tier-table td.freq-cell { width: 0.7in; font-family: Arial, sans-serif; font-size: 7pt; color: #888; text-align: center; }
+
+/* ══════════════════════════════════════
+   WEEKLY REFERENCE CARD
+══════════════════════════════════════ */
+.ref-card h2 {
+  font-size: 20pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in; margin-bottom: 0.16in;
+}
+.ref-day-row {
+  border-left: 3pt solid;
+  padding: 0.08in 0.12in;
+  margin-bottom: 0.1in;
+}
+.ref-day-row.monday   { border-color: #c0392b; }
+.ref-day-row.tuesday  { border-color: #2980b9; }
+.ref-day-row.wednesday{ border-color: #27ae60; }
+.ref-day-row.thursday { border-color: #e67e22; }
+.ref-day-row.friday   { border-color: #8e44ad; }
+.ref-day-row .rd-header {
+  display: flex; align-items: baseline; gap: 0.1in;
+  margin-bottom: 0.04in;
+}
+.rd-day {
+  font-family: Arial, sans-serif; font-size: 9.5pt;
+  font-weight: 700; color: #1a2e1a;
+}
+.rd-theme {
+  font-size: 8.5pt; font-style: italic; color: #666;
+}
+.rd-activities {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0.04in 0.12in; font-size: 8pt; color: #333;
+}
+.rd-activities li { list-style: none; padding-left: 0.1in; position: relative; }
+.rd-activities li::before { content: '•'; position: absolute; left: 0; color: #bbb; }
+.wbn-rule {
+  background: #1a2e1a; color: #7fc47a;
+  padding: 0.1in 0.15in;
+  font-family: Arial, sans-serif; font-size: 9pt;
+  font-weight: 700; text-align: center;
+  letter-spacing: 0.5px; margin-bottom: 0.12in;
+}
+
+/* ══════════════════════════════════════
+   WEEK PLANNING PAGE
+══════════════════════════════════════ */
+.week-plan-page h2 {
+  font-size: 18pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.08in; margin-bottom: 0.15in;
+}
+.week-banner {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #1a2e1a; color: white;
+  padding: 0.1in 0.15in; margin-bottom: 0.15in;
+}
+.wb-week { font-family: Arial, sans-serif; font-size: 16pt; font-weight: 700; color: #7fc47a; }
+.wb-date {
+  font-family: Arial, sans-serif; font-size: 8pt;
+  letter-spacing: 1px; text-transform: uppercase; opacity: 0.8;
+}
+.wb-date-line { min-width: 1.5in; border-bottom: 1pt solid rgba(255,255,255,0.5); height: 0.2in; display: inline-block; }
+.week-plan-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.14in; margin-bottom: 0.14in;
+}
+.wp-section { border: 1pt solid #ddd; padding: 0.12in; }
+.wp-section .wps-title {
+  font-family: Arial, sans-serif; font-size: 7.5pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; color: #1a2e1a;
+  border-bottom: 1pt solid #eee; padding-bottom: 0.05in; margin-bottom: 0.08in;
+}
+.wp-line { border-bottom: 0.5pt dotted #bbb; height: 0.22in; margin-bottom: 0.04in; }
+.week-kpi-row {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.08in;
+  margin-bottom: 0.12in;
+}
+.wk-cell {
+  border: 1pt solid #ddd; text-align: center; padding: 0.06in 0.04in;
+}
+.wk-cell .wkc-day {
+  font-family: Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  text-transform: uppercase; color: #888; margin-bottom: 0.03in;
+}
+.wk-cell .wkc-box { border-bottom: 1pt solid #ddd; height: 0.22in; margin: 0.02in 0.05in 0.04in; }
+.wk-cell .wkc-label { font-family: Arial, sans-serif; font-size: 6.5pt; color: #aaa; }
+.weekly-wins {
+  border: 1pt solid #ddd; padding: 0.12in;
+}
+.weekly-wins .ww-title {
+  font-family: Arial, sans-serif; font-size: 7.5pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; color: #1a2e1a;
+  margin-bottom: 0.08in;
+}
+.ww-line { border-bottom: 0.5pt dotted #bbb; height: 0.22in; margin-bottom: 0.04in; }
+
+/* ══════════════════════════════════════
+   DAILY PAGE
+══════════════════════════════════════ */
+.daily-page {
+  display: flex; flex-direction: column;
+  height: 9.7in;
+}
+.daily-header {
+  display: flex; align-items: stretch;
+  border-bottom: 2pt solid #1a2e1a;
+  margin-bottom: 0.12in;
+  padding-bottom: 0.1in;
+  gap: 0.12in;
+}
+.dh-day-block {
+  min-width: 1.2in; padding: 0.06in 0.1in;
+  border-right: 2pt solid #1a2e1a;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.dh-day-name {
+  font-family: Arial, sans-serif; font-size: 15pt; font-weight: 700;
+  color: #1a2e1a; line-height: 1;
+}
+.dh-day-theme {
+  font-size: 7pt; color: #888; font-family: Arial, sans-serif;
+  font-style: italic; margin-top: 0.03in;
+}
+.dh-meta {
+  flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+}
+.dh-meta-top {
+  display: flex; gap: 0.2in; align-items: center;
+}
+.dh-field {
+  display: flex; align-items: baseline; gap: 0.06in;
+  font-family: Arial, sans-serif; font-size: 7.5pt;
+}
+.dh-field label { color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-size: 7pt; }
+.dh-field .dh-line { border-bottom: 1pt solid #bbb; min-width: 1in; height: 0.17in; }
+.dh-wbn {
+  font-family: Arial, sans-serif; font-size: 8pt; font-weight: 700;
+  color: #4a8c3f; letter-spacing: 0.5px;
+}
+.dh-focus {
+  font-size: 8pt; font-style: italic; color: #444;
+}
+
+/* MORNING PRIORITY block */
+.wbn-block {
+  border: 1.5pt solid #1a2e1a; margin-bottom: 0.1in;
+  overflow: hidden;
+}
+.wbn-block-header {
+  background: #1a2e1a; color: white;
+  padding: 0.05in 0.1in;
+  display: flex; align-items: center; gap: 0.08in;
+}
+.wbn-block-header .wbnh-tag {
+  font-family: Arial, sans-serif; font-size: 7pt;
+  font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: #7fc47a;
+}
+.wbn-block-header .wbnh-time {
+  font-family: Arial, sans-serif; font-size: 7pt; opacity: 0.7;
+}
+.wbn-block-header .wbnh-title {
+  font-family: Arial, sans-serif; font-size: 9pt; font-weight: 700;
+  margin-left: auto;
+}
+.wbn-block-body {
+  padding: 0.08in 0.1in;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.06in 0.14in;
+}
+.wbn-block-body.single-col { grid-template-columns: 1fr; }
+.call-row {
+  display: flex; align-items: center; gap: 0.04in;
+  border-bottom: 0.5pt solid #f0f0f0; padding: 0.025in 0;
+}
+.call-row .cr-num {
+  font-family: Arial, sans-serif; font-size: 7pt;
+  color: #aaa; min-width: 0.14in; text-align: right;
+}
+.call-row .cr-line { flex: 1; border-bottom: 0.5pt dotted #bbb; height: 0.16in; margin: 0 0.04in; }
+.cr-check { font-size: 9pt; color: #bbb; }
+.cr-label { font-family: Arial, sans-serif; font-size: 6.5pt; color: #aaa; }
+
+/* section blocks */
+.day-section { margin-bottom: 0.1in; }
+.ds-header {
+  display: flex; align-items: center; gap: 0.08in;
+  background: #f5f5f5; padding: 0.04in 0.08in;
+  border-left: 3pt solid #1a2e1a;
+  margin-bottom: 0.06in;
+}
+.ds-header.morning { border-left-color: #f39c12; }
+.ds-header.midday  { border-left-color: #2980b9; }
+.ds-header.afternoon { border-left-color: #27ae60; }
+.ds-header.eod     { border-left-color: #8e44ad; }
+.ds-time {
+  font-family: Arial, sans-serif; font-size: 7pt;
+  color: #888; min-width: 0.7in;
+}
+.ds-title {
+  font-family: Arial, sans-serif; font-size: 8pt; font-weight: 700;
+  color: #1a2e1a;
+}
+.ds-body {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.04in 0.14in;
+  padding: 0 0.04in;
+}
+.ds-body.single { grid-template-columns: 1fr; }
+.check-item {
+  display: flex; align-items: center; gap: 0.05in;
+  padding: 0.02in 0; font-size: 8pt; color: #333;
+}
+.cb { font-size: 10pt; color: #888; min-width: 0.12in; }
+.fill-item {
+  display: flex; align-items: baseline; gap: 0.05in;
+  padding: 0.02in 0; font-size: 8pt; color: #333;
+}
+.fill-item label { font-size: 7.5pt; color: #555; white-space: nowrap; }
+.fill-item .fi-line { flex: 1; border-bottom: 0.5pt dotted #bbb; min-width: 0.5in; height: 0.17in; }
+
+/* daily KPI bar */
+.daily-kpi {
+  background: #f9f9f9; border: 0.5pt solid #ddd;
+  padding: 0.07in 0.1in; margin-bottom: 0.08in;
+  display: flex; gap: 0.08in; align-items: center;
+}
+.dkpi-label {
+  font-family: Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; color: #1a2e1a;
+  min-width: 0.6in;
+}
+.dkpi-items {
+  display: flex; flex-wrap: wrap; gap: 0.06in 0.14in; flex: 1;
+}
+.dkpi-item {
+  display: flex; align-items: baseline; gap: 0.04in;
+}
+.dkpi-item label { font-family: Arial, sans-serif; font-size: 7pt; color: #777; }
+.dkpi-item .di-box { border-bottom: 1pt solid #bbb; width: 0.35in; height: 0.16in; }
+
+/* win/gratitude */
+.daily-win {
+  flex: 1;
+  border: 0.5pt solid #ddd; padding: 0.07in 0.1in;
+  display: flex; flex-direction: column;
+}
+.dw-label {
+  font-family: Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; color: #4a8c3f;
+  margin-bottom: 0.04in;
+}
+.dw-content { flex: 1; display: flex; flex-direction: column; gap: 0.04in; }
+.dw-line { border-bottom: 0.5pt dotted #bbb; flex: 1; min-height: 0.18in; }
+
+/* notes lines */
+.notes-lines {
+  display: flex; flex-direction: column; gap: 0.03in; flex: 1;
+}
+.note-line { border-bottom: 0.5pt dotted #ddd; min-height: 0.21in; }
+
+/* ══════════════════════════════════════
+   QUARTERLY REVIEW
+══════════════════════════════════════ */
+.qr-page h2 {
+  font-size: 20pt; color: #1a2e1a;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in; margin-bottom: 0.18in;
+}
+.qr-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0.15in; margin-bottom: 0.15in;
+}
+.qr-section { border: 1pt solid #ddd; padding: 0.12in; }
+.qr-section .qrs-title {
+  font-family: Arial, sans-serif; font-size: 8pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px; color: #1a2e1a;
+  border-bottom: 1pt solid #eee; padding-bottom: 0.06in; margin-bottom: 0.1in;
+}
+.qr-line { border-bottom: 0.5pt dotted #bbb; height: 0.22in; margin-bottom: 0.06in; }
+.kpi-compare {
+  display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 0; margin-bottom: 0.15in;
+}
+.kpic-header {
+  font-family: Arial, sans-serif; font-size: 7pt; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  background: #1a2e1a; color: rgba(255,255,255,0.7);
+  padding: 0.05in 0.08in; border: 0.5pt solid #1a2e1a;
+}
+.kpic-header:first-child { color: white; }
+.kpic-row-label {
+  font-size: 8pt; color: #333;
+  padding: 0.05in 0.08in;
+  border: 0.5pt solid #eee;
+  background: #fafafa;
+}
+.kpic-cell {
+  border: 0.5pt solid #eee;
+  height: 0.25in;
+}
+
+/* ══════════════════════════════════════
+   NOTES PAGE
+══════════════════════════════════════ */
+.notes-page {
+  display: flex;
+  flex-direction: column;
+  height: 9.7in;
+}
+.np-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in;
+  margin-bottom: 0.18in;
+}
+.np-day-label {
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+  font-weight: 700;
+  color: #1a2e1a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.np-date-field {
+  display: flex;
+  align-items: baseline;
+  gap: 0.06in;
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  color: #888;
+}
+.np-date-line {
+  border-bottom: 1pt solid #bbb;
+  min-width: 1in;
+  height: 0.17in;
+  display: inline-block;
+}
+.np-section-title {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #4a8c3f;
+  margin-bottom: 0.08in;
+}
+.np-notes-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.18in;
+}
+.np-note-line {
+  border-bottom: 0.5pt solid #ddd;
+  min-height: 0.27in;
+}
+.np-todo-area {
+  border-top: 1.5pt solid #1a2e1a;
+  padding-top: 0.12in;
+}
+.np-todo-item {
+  display: flex;
+  align-items: center;
+  gap: 0.08in;
+  border-bottom: 0.5pt dotted #ddd;
+  padding: 0.03in 0;
+  min-height: 0.25in;
+}
+.np-todo-cb {
+  font-size: 10pt;
+  color: #bbb;
+  min-width: 0.14in;
+}
+.np-todo-line {
+  flex: 1;
+  border-bottom: 0.5pt dotted #bbb;
+  height: 0.17in;
+}
+.np-priority-flag {
+  font-family: Arial, sans-serif;
+  font-size: 6.5pt;
+  color: #4a8c3f;
+  min-width: 0.3in;
+  text-align: right;
+}
+
+/* ══════════════════════════════════════
+   WEEKEND PAGES
+══════════════════════════════════════ */
+.weekend-page {
+  display: flex;
+  flex-direction: column;
+  height: 9.7in;
+}
+.weekend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2pt solid #1a2e1a;
+  padding-bottom: 0.1in;
+  margin-bottom: 0.18in;
+}
+.weekend-day-label {
+  font-family: Arial, sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+  color: #1a2e1a;
+  line-height: 1;
+}
+.kpi-weekly-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.15in;
+}
+.kpi-weekly-table th {
+  font-family: Arial, sans-serif;
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #1a2e1a;
+  color: rgba(255,255,255,0.85);
+  padding: 0.05in 0.07in;
+  border: 0.5pt solid #1a2e1a;
+  text-align: center;
+}
+.kpi-weekly-table th:first-child { text-align: left; color: white; }
+.kpi-weekly-table td {
+  border: 0.5pt solid #ddd;
+  padding: 0.05in 0.07in;
+  font-size: 8pt;
+  height: 0.28in;
+  text-align: center;
+}
+.kpi-weekly-table td:first-child {
+  text-align: left;
+  font-family: Arial, sans-serif;
+  font-size: 8pt;
+  color: #333;
+  background: #fafafa;
+}
+.kpiwt-total {
+  background: #f5fff4;
+  font-weight: 700;
+  color: #1a2e1a;
+  border: 1pt solid #4a8c3f !important;
+}
+.kpiwt-total-head {
+  background: #4a8c3f !important;
+  color: white !important;
+  border-color: #4a8c3f !important;
+}
+.weekend-section-title {
+  font-family: Arial, sans-serif;
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1a2e1a;
+  border-bottom: 1pt solid #eee;
+  padding-bottom: 0.05in;
+  margin-bottom: 0.1in;
+}
+.sun-fill-line {
+  border-bottom: 0.5pt dotted #bbb;
+  height: 0.22in;
+  margin-bottom: 0.05in;
+}
+
+/* ══════════════════════════════════════
+   SCREEN PREVIEW CONTROLS
+══════════════════════════════════════ */
+.no-print {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #1a2e1a; color: white;
+  padding: 12px 20px; border-radius: 6px;
+  font-family: Arial, sans-serif; font-size: 12px;
+  cursor: pointer; z-index: 999;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.no-print:hover { background: #2d5a27; }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════
+     BLANK PAGE
+════════════════════════════════ -->
+<div class="page"></div>
+
+
+<!-- ════════════════════════════════
+     COVER
+════════════════════════════════ -->
+<div class="page" id="cover">
+<div class="cover">
+  <div class="cover-top">
+    <div class="cover-badge">Quarterly Planner &bull; Real Estate Agent Edition</div>
+    <h1>Real Estate Agent<br>Success Planner</h1>
+    <h2>Your Daily Road Map to a Top-Producing Real Estate Business</h2>
+  </div>
+  <div class="cover-mid">
+    <div class="owner-block">
+      <div class="ob-label">This planner belongs to</div>
+      <div class="owner-line"></div>
+      <div class="owner-grid">
+        <div>
+          <div class="ob-label">Brokerage / Team</div>
+          <div class="owner-line"></div>
+        </div>
+        <div>
+          <div class="ob-label">License #</div>
+          <div class="owner-line"></div>
+        </div>
+        <div>
+          <div class="ob-label">Quarter</div>
+          <div class="owner-line"></div>
+        </div>
+        <div>
+          <div class="ob-label">Year</div>
+          <div class="owner-line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="cover-pillars">
+      <div class="cover-pillar">Morning Priority<span>Complete your lead generation activities every morning before anything else interrupts your day.</span></div>
+      <div class="cover-pillar">Prospect Daily<span>FSBOs, expireds, SOI, and past clients — revenue-generating calls happen first, every day, always.</span></div>
+      <div class="cover-pillar">Build Relationships<span>Referrals from past clients, professional partners, and your sphere are the engine of every top producer.</span></div>
+      <div class="cover-pillar">Track Everything<span>What gets measured gets managed. Log your KPIs daily — dials, appointments, listings, and closings.</span></div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <div class="cover-sources">
+      Built for real estate agents committed to daily discipline, consistent prospecting, and long-term relationship growth.<br>Enhanced with insights from 10 leading coaching platforms.
+    </div>
+    <div class="cover-wbn">Real Estate Agent<br>Success Planner</div>
+  </div>
+</div>
+<div class="page-num">i</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     DISCLAIMER
+════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label">Legal Notice</div>
+  <h2 class="sec-head" style="border-color:#1a2e1a;">Disclaimer &amp; Trademarks Notice</h2>
+  <div style="background: #f8f9fa; border-left: 4px solid #4a8c3f; padding: 20px 24px; margin-bottom: 20px; font-size: 9.5pt; line-height: 1.7; color: #333;">
+    <p style="margin-bottom: 12px;"><em>This planner is an independent educational synthesis of publicly available coaching philosophies and industry best practices. It is not affiliated with, endorsed by, or sponsored by any of the coaching organizations or individuals referenced herein.</em></p>
+    <p style="margin-bottom: 12px;"><em>All product names, program names, book titles, and trademarks mentioned — including but not limited to BOLD™, MAPS Coaching™, The ONE Thing™, Working by Referral™, 33 Touch™, 8x8™, The Book of YES™, Full Fee Agent™, UNSCRIPTED™, SkySlope®, SkySlope Ayce™, MaverickRE™, and all others — are the property of their respective owners and are used here solely for identification and educational commentary purposes.</em></p>
+    <p><em>Readers are encouraged to explore each coaching platform directly for their complete programs and training materials.</em></p>
+  </div>
+  <div class="page-num">—</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     HOW TO USE
+════════════════════════════════ -->
+<div class="page how-to">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Foundation</p>
+  <h2 style="font-size:20pt;color:#1a2e1a;border-bottom:2pt solid #1a2e1a;padding-bottom:0.1in;margin-bottom:0.18in;">How to Use This Planner</h2>
+
+  <div class="wbn-callout">
+    <div class="wbn-headline">The Morning Priority Principle</div>
+    <p>Every top-producing real estate agent follows one non-negotiable discipline: time-block every morning and complete the activities that drive your future business <em>before</em> anything else. Door closed. Email closed. Phone in do-not-disturb mode. Revenue-generating work comes first — always. This planner is built around that principle. Every day starts with a protected <strong>MORNING PRIORITY BLOCK</strong> from 9:00–11:00 AM dedicated exclusively to lead generation and prospecting. Guard it with your life. If you complete your most important work before noon, the rest of the day is a bonus.</p>
+  </div>
+
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="hc-num">1</div>
+      <div class="hc-title">Fill in your Quarterly Goals first</div>
+      <p>Before Week 1 begins, complete the Quarterly Goals page and Referral Partner Roster. Know your numbers — listings, closings, and GCI targets — before you start the clock.</p>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">2</div>
+      <div class="hc-title">Start each week with the Weekly Plan page</div>
+      <p>Every Monday morning begins here. Set your weekly targets, write your lead gen call list (FSBOs, expireds, SOI), and commit to your listing appointment goals before you dial.</p>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">3</div>
+      <div class="hc-title">Use each Daily Page like a contract</div>
+      <p>Pre-fill your call names the night before. Check off activities as you complete them. The daily page is your scoreboard — not a wish list. Treat it like a court-ordered obligation.</p>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">4</div>
+      <div class="hc-title">Log your KPIs every single day</div>
+      <p>The daily KPI bar at the bottom of each page takes 60 seconds to fill in. At the end of the quarter, these numbers will tell you exactly why your results are what they are.</p>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">5</div>
+      <div class="hc-title">End each day with a Win or Gratitude</div>
+      <p>Top producers maintain a positive mindset by acknowledging what went right. Write at least one win, referral received, or gratitude before closing the planner each evening.</p>
+    </div>
+    <div class="how-card">
+      <div class="hc-num">6</div>
+      <div class="hc-title">Complete the Quarterly Review</div>
+      <p>At the end of 13 weeks, fill in the Quarterly Review before starting your next planner. Review, adjust, and commit to improvements. The cycle of growth continues.</p>
+    </div>
+  </div>
+
+  <div class="legend-row">
+    <div class="legend-item"><div class="leg-box" style="background:#1a2e1a;"></div> Morning Priority (Protected)</div>
+    <div class="legend-item"><div class="leg-box" style="background:#f5f5f5;border:0.5pt solid #ddd;border-left:3pt solid #f39c12;"></div> Morning Ritual</div>
+    <div class="legend-item"><div class="leg-box" style="background:#f5f5f5;border:0.5pt solid #ddd;border-left:3pt solid #2980b9;"></div> Midday / Client Work</div>
+    <div class="legend-item"><div class="leg-box" style="background:#f5f5f5;border:0.5pt solid #ddd;border-left:3pt solid #27ae60;"></div> Afternoon Operations</div>
+    <div class="legend-item"><div class="leg-box" style="background:#f5f5f5;border:0.5pt solid #ddd;border-left:3pt solid #8e44ad;"></div> End-of-Day Wrap</div>
+    <div class="legend-item"><div class="leg-box" style="background:#f5fff4;border:1pt solid #4a8c3f;"></div> Win / Gratitude</div>
+  </div>
+  <div class="symbol-guide">
+    <div class="sym-item"><span class="sym">&#9633;</span> Checkbox — tap or mark when complete</div>
+    <div class="sym-item"><span class="sym">&#9135;</span> Fill-in line — write names, notes, numbers</div>
+    <div class="sym-item"><span class="sym">&#128308;</span> Protected time block — do not schedule over</div>
+    <div class="sym-item"><span class="sym">&#128197;</span> Date field — always fill in before starting the day</div>
+  </div>
+<div class="page-num">ii</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     PRINCIPLES
+════════════════════════════════ -->
+<div class="page principles-page">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Core Philosophy</p>
+  <h2>10 Laws of the Top-Producing Real Estate Agent</h2>
+  <div class="prin-grid">
+    <div class="prin-card">
+      <div class="pc-num">Law 01</div>
+      <div class="pc-title">Prospect First. Always.</div>
+      <p>Revenue-generating activities own your morning. Admin and email are scheduled around prospecting — never the reverse. Your morning priority block is sacred. Protect it every day.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 02</div>
+      <div class="pc-title">Listings Are Your Leverage</div>
+      <p>Every listing is a billboard, a buyer lead magnet, and a dual-sided commission opportunity. The listing agent builds the brand. Listings create market presence that cold calls cannot buy.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 03</div>
+      <div class="pc-title">Consistency Beats Intensity</div>
+      <p>Five prospecting calls every single day outperforms 50 calls once a month. Daily habits compound into extraordinary results. Show up every day — especially when it's inconvenient.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 04</div>
+      <div class="pc-title">Accountability Changes Behavior</div>
+      <p>A coach, an accountability partner, or a daily check-in dramatically increases follow-through. Commit publicly to your numbers. This planner is your silent accountability partner.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 05</div>
+      <div class="pc-title">Delegate to Protect Your Time</div>
+      <p>Every hour spent on transaction coordination, paperwork, or scheduling is stolen from listing appointments, buyer consultations, and relationship-building. Build a team. Leverage everything.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 06</div>
+      <div class="pc-title">Measure Leading Indicators</div>
+      <p>Track dials made, listing appointments set, and referrals asked for — not just closings. Activity metrics predict future results. You can't manage what you don't measure.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 07</div>
+      <div class="pc-title">Trust Outlasts Every Transaction</div>
+      <p>Handwritten notes, pop-bys, anniversary calls, and systematic database contact generate more referrals than any advertising. Be their agent for life — not just for one sale.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 08</div>
+      <div class="pc-title">Rest Is Part of the System</div>
+      <p>A hard stop at 5 PM and intentional weekends are non-negotiable. Burnout destroys long-term production. The most productive agents work fewer, more focused hours — not more hours.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 09</div>
+      <div class="pc-title">Speed to Lead Wins</div>
+      <p>New leads must be contacted within 5 minutes. Industry data shows you are dramatically more likely to convert a lead contacted immediately versus waiting even 30 minutes. Every minute of delay costs you money.</p>
+    </div>
+    <div class="prin-card">
+      <div class="pc-num">Law 10</div>
+      <div class="pc-title">Master Communication, Not Just Scripts</div>
+      <p>Scripts are starting points, not crutches. True mastery means internalizing tactical empathy — mirroring, labeling emotions, and asking questions that make clients feel deeply understood. The agent who listens best wins the listing.</p>
+    </div>
+  </div>
+  <div style="border-top:1pt solid #eee;padding-top:0.14in;">
+    <div style="font-family:Arial,sans-serif;font-size:7pt;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.1in;">Key Concepts Used in This Planner</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.1in 0.2in;">
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Morning Priority Block (9–11 AM)</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">A protected, distraction-free window every morning dedicated exclusively to lead generation. No email, no showings, no exceptions. FSBOs, expireds, circle prospecting, and SOI calls happen here. This is your most important production time each day.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Listing Consultation (Listing Presentation)</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">A structured discovery meeting with a potential seller designed to understand their goals, timeline, and motivation before presenting your CMA and marketing plan. Leads with curiosity, not a pitch. Educates on the market before recommending a price. Builds trust and wins the listing agreement.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">The Database Contact System</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">Contact every person in your database consistently through a strategic mix of calls, handwritten notes, pop-bys, emails, events, and mailers. Industry coaching consensus suggests 33-40 touches per year per contact. A well-maintained database of 200+ people with consistent multi-channel contact produces reliable annual transaction volume that scales proportionally as your database grows.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">A / B / C Partner Tiers</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">A system for prioritizing referral partners. A-Tier: preferred lenders, title reps, estate attorneys — contact every 2–4 weeks. B-Tier: CPAs, inspectors, financial advisors — contact monthly. C-Tier: moving companies, HR directors, property managers — contact quarterly to build the relationship.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">KPIs (Key Performance Indicators)</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">The daily and weekly numbers that predict your future results: dials made, listing appointments set and held, listings taken, contracts written, referrals asked for, and closings. Tracking these consistently shows you exactly what's driving — or limiting — your production.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Transaction Management</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">The practice of proactively communicating with all parties on every active transaction from contract to close. Status calls before they ask you — to all clients, co-op agents, lenders, and title. Eliminates reactive stress, prevents surprises, and builds a reputation for reliability that generates referrals.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Lead Categorization System</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">A framework for prioritizing leads by readiness: HOT (ready within 30 days, contact every 1-3 days), WARM (30-90 days, contact every 7-14 days), COOL (3-12 months, contact every 14-30 days), NURTURE (no clear timeline, multi-channel touches), SOI/Database (33-40 touches/year), and DEAD (remove from pipeline). Speed-to-lead rule: contact new online leads within 5 minutes.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Objection Handling Frameworks</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">Structured methods for responding to prospect objections. The PPO approach: understand their Perspective (past experience), Process (their current plan), and desired Outcome. The API response method: Acknowledge what they said, Paraphrase without spin, then Inquire deeper. Tactical empathy techniques: mirror their words, label their emotions, and preemptively voice concerns they may be thinking.</div>
+      </div>
+      <div style="border-left:2pt solid #4a8c3f;padding:0.06in 0.1in;">
+        <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;color:#1a2e1a;margin-bottom:0.03in;">Pre-Listing Qualification</div>
+        <div style="font-size:7.5pt;color:#444;line-height:1.5;">A systematic process completed before every listing appointment: pre-qualification call to uncover motivation and timeline, assessment of whether you're the preferred agent or just providing a free analysis, structured qualification covering location, price expectations, motivation, and commitment. Send an impressive pre-listing packet (CMA, net sheet, marketing plan, testimonials) before the appointment.</div>
+      </div>
+    </div>
+  </div>
+<div class="page-num">iii</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     QUARTERLY GOALS
+════════════════════════════════ -->
+<div class="page goals-page">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Before You Begin</p>
+  <h2>Quarterly Goal Setting</h2>
+  <div class="goals-banner">
+    <div><div class="gb-label">Quarter</div><div class="gb-val">&nbsp;</div></div>
+    <div><div class="gb-label">Start Date</div><div class="gb-val">&nbsp;</div></div>
+    <div><div class="gb-label">End Date</div><div class="gb-val">&nbsp;</div></div>
+    <div><div class="gb-label">My #1 Goal This Quarter</div><div class="gb-val" style="min-width:2.5in;">&nbsp;</div></div>
+  </div>
+  <div class="goals-grid">
+    <div class="goals-section">
+      <div class="gs-title">Production Targets</div>
+      <div class="goal-row"><span class="gr-label">Listings to take</span><span class="goal-line"></span><span style="font-size:7.5pt;color:#888;margin-left:0.06in;">units</span></div>
+      <div class="goal-row"><span class="gr-label">Total closings (both sides)</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Total sales volume</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">GCI target</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Seller sides %</span><span class="goal-line"></span><span style="font-size:7.5pt;color:#888;margin-left:0.06in;">%</span></div>
+      <div class="goal-row"><span class="gr-label">Buyer sides %</span><span class="goal-line"></span><span style="font-size:7.5pt;color:#888;margin-left:0.06in;">%</span></div>
+    </div>
+    <div class="goals-section">
+      <div class="gs-title">Weekly Activity Targets</div>
+      <div class="goal-row"><span class="gr-label">Lead gen dials/week</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Live conversations/week</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Listing appts/week</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Buyer consults/week</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Pop-bys/week (Buffini)</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Partner meetings/week</span><span class="goal-line"></span></div>
+    </div>
+    <div class="goals-section">
+      <div class="gs-title">Relationship Goals</div>
+      <div class="goal-row"><span class="gr-label">A-tier partners to deepen</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">New referral sources to add</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Database contact growth target</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">5-star reviews to earn</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Events / seminars to host</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Co-marketing campaigns</span><span class="goal-line"></span></div>
+    </div>
+    <div class="goals-section">
+      <div class="gs-title">Personal &amp; Financial Goals</div>
+      <div class="goal-row"><span class="gr-label">Savings target (20% of GCI)</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Giving target (3–10%)</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Coaching / training to complete</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Books / programs</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">Exercise days/week</span><span class="goal-line"></span></div>
+      <div class="goal-row"><span class="gr-label">One personal goal</span><span class="goal-line"></span></div>
+    </div>
+  </div>
+  <div class="magic-formula">
+    <div class="mf-title">&#9733; Production Formula — Fill In Your Numbers</div>
+    <div class="mf-equation">___ Core Referral Sources &nbsp;&times;&nbsp; ___ Leads/Month &nbsp;&times;&nbsp; ___% Appt Conversion &nbsp;=&nbsp; ___ Listing Appts/Month</div>
+    <div class="mf-fill">
+      <div class="mf-box"><div class="mb-label">My A-Tier Sources</div><div class="mb-line"></div></div>
+      <div class="mf-box"><div class="mb-label">Avg. Leads Each</div><div class="mb-line"></div></div>
+      <div class="mf-box"><div class="mb-label">My Appt Close Rate %</div><div class="mb-line"></div></div>
+    </div>
+  </div>
+  <div style="background: #f0f4e8; border: 1px solid #4a8c3f; border-radius: 6px; padding: 14px 18px; margin-top: 12px; font-size: 8.5pt; line-height: 1.6;">
+    <strong>Daily Activity Calculator:</strong> Annual GCI Goal ÷ Avg Commission = Transactions Needed ÷ Close Rate = Listings Needed ÷ Appt-to-Listing Rate = Appointments Needed ÷ Contact-to-Appt Rate = Total Contacts ÷ 250 Working Days = <strong>Your Daily Contact Target</strong>
+  </div>
+  <div style="border:1pt solid #ddd;padding:0.12in;">
+    <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#1a2e1a;margin-bottom:0.08in;">My Commitment This Quarter</div>
+    <div style="border-bottom:0.5pt dotted #bbb;height:0.22in;margin-bottom:0.08in;"></div>
+    <div style="border-bottom:0.5pt dotted #bbb;height:0.22in;"></div>
+  </div>
+<div class="page-num">iv</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     REFERRAL PARTNER ROSTER — Page 1
+════════════════════════════════ -->
+<div class="page roster-page">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Your Pipeline Engine — Page 1 of 2</p>
+  <h2>Referral Partner Roster</h2>
+  <div class="roster-grid">
+    <div>
+      <table class="tier-table">
+        <caption class="cap-a">&#11088; A-Tier — Top Sources (Contact Every 2–4 Weeks)</caption>
+        <thead><tr><th class="name-cell">Name / Company</th><th class="phone-cell">Phone</th><th class="freq-cell">Last Contact</th></tr></thead>
+        <tbody>
+          <tr><td class="name-cell"></td><td class="phone-cell"></td><td class="freq-cell"></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <table class="tier-table">
+        <caption class="cap-b">&#128994; B-Tier — Active Sources (Contact Monthly)</caption>
+        <thead><tr><th class="name-cell">Name / Company</th><th class="phone-cell">Phone</th><th class="freq-cell">Last Contact</th></tr></thead>
+        <tbody>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+          <tr><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<div class="page-num">v</div>
+</div>
+
+<!-- Roster Page 2: C-Tier -->
+<div class="page roster-page">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Your Pipeline Engine — Page 2 of 2</p>
+  <h2>Referral Partner Roster <span style="font-size:14pt;font-weight:400;color:#555;">&mdash; C-Tier</span></h2>
+  <div style="background:#f5fff4;border:1pt solid #4a8c3f;padding:0.1in 0.14in;margin-bottom:0.18in;font-family:Arial,sans-serif;font-size:8pt;color:#444;line-height:1.5;">
+    <strong style="color:#1a2e1a;">C-Tier partners</strong> are growth opportunities — moving companies, HR directors, property managers, senior care advisors, and financial professionals you've identified as having referral potential but haven't yet developed into an active relationship. Contact them quarterly, deliver value consistently, and gradually move them up to B-Tier as trust grows.
+  </div>
+  <table class="tier-table" style="width:100%;">
+    <caption class="cap-c">&#128993; C-Tier — Growth Targets (Contact Quarterly)</caption>
+    <thead><tr><th class="name-cell">Name / Company</th><th class="phone-cell">Phone</th><th class="freq-cell">Last Contact</th></tr></thead>
+    <tbody>
+      <tr><td class="name-cell"></td><td class="phone-cell"></td><td class="freq-cell"></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+<div class="page-num">vi</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     WEEKLY REFERENCE CARD
+════════════════════════════════ -->
+<div class="page ref-card">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Keep This Page Visible</p>
+  <h2>Weekly Time-Block Reference</h2>
+  <div class="wbn-rule">&#128308; The Morning Priority Rule: 9:00–11:00 AM Every Day is PROTECTED. No showings. No email. No exceptions. Lead generate first — your future business depends on it.</div>
+  <div class="ref-day-row monday">
+    <div class="rd-header"><span class="rd-day">Monday</span><span class="rd-theme">— Lead Generation Day (FSBOs / Expireds / Circle Prospecting)</span></div>
+    <ul class="rd-activities">
+      <li>FSBO calls: empathetic introduction — offer your buyer pool as a value proposition and lead with how you can help; offer market data as value</li>
+      <li>Expired listing calls: lead with empathy about their experience, then offer a different approach</li>
+      <li>Circle prospecting: call 50–100 homes around a new listing or sold property — reference your local activity and buyer interest in their area</li>
+      <li>Referral partner lunch at 12–1 PM</li>
+      <li>Open house / market preview at 1–3 PM</li>
+      <li>CRM update, thank-you notes, weekly goal log at 4–5 PM</li>
+    </ul>
+  </div>
+  <div class="ref-day-row tuesday">
+    <div class="rd-header"><span class="rd-day">Tuesday</span><span class="rd-theme">— Listing Appointment Day</span></div>
+    <ul class="rd-activities">
+      <li>SOI calls 9–11 AM: genuine check-in with 10–15 sphere contacts — always end with ask if they know anyone considering a move</li>
+      <li>Listing appointments 1–4 PM: Pre-qualify every appointment. Lead with curiosity and tactical empathy. Present CMA and marketing plan. Handle objections using structured frameworks (acknowledge, restate, inquire). Close with confidence.</li>
+      <li>New listing onboarding at end of day: photography, staging, MLS entry scheduled immediately</li>
+      <li>New referral source outreach: CPAs, attorneys, financial planners in the 9–11 AM block</li>
+      <li>Log KPIs: listing appts held, listing agreements signed</li>
+    </ul>
+  </div>
+  <div class="ref-day-row wednesday">
+    <div class="rd-header"><span class="rd-day">Wednesday</span><span class="rd-theme">— Buyers &amp; Transaction Management Day</span></div>
+    <ul class="rd-activities">
+      <li>Past client database calls 9–11 AM: annual home equity review; offer a complimentary home value analysis — the market has been moving</li>
+      <li>Proactive transaction status calls: every client and co-op agent on every active deal — before they call you</li>
+      <li>Buyer consultations 1–3 PM: structured discovery first; know their goals before showing homes</li>
+      <li>Property showings for active buyer clients</li>
+      <li>Monthly market update email sent to full database</li>
+      <li>CRM clean-up, new contacts added, database contact sequences updated</li>
+    </ul>
+  </div>
+  <div class="ref-day-row thursday">
+    <div class="rd-header"><span class="rd-day">Thursday</span><span class="rd-theme">— Database, Referrals &amp; Sphere Day (Buffini Model)</span></div>
+    <ul class="rd-activities">
+      <li>Pop-bys 9–11 AM: bring a meaningful, personal item (coffee, seasonal gift) — this is one of the highest-converting personal touch strategies in the industry (approach drawn from Buffini &amp; Company)</li>
+      <li>Handwritten notecards: write 5–10 personal notes to database contacts (not mass mailers — personal notes only)</li>
+      <li>Open house follow-up: call every visitor from the prior weekend within 48 hours while memory is fresh</li>
+      <li>Referral thank-you: send a personalized thank-you within 24 hours of every referral received</li>
+      <li>Networking lunch with preferred lender, title rep, or CPA at 12–1 PM</li>
+    </ul>
+  </div>
+  <div class="ref-day-row friday">
+    <div class="rd-header"><span class="rd-day">Friday</span><span class="rd-theme">— Marketing, Planning &amp; Professional Development</span></div>
+    <ul class="rd-activities">
+      <li>Review request calls for all recent closings — Google and Zillow — personal asks, not automated emails</li>
+      <li>Batch-record 1–2 short videos; schedule 5 social posts for next week in one sitting</li>
+      <li>2 hours professional development: coaching podcast, training module, script practice, AI role-play tools (MaverickRE, SkySlope Ayce), recommended reading</li>
+      <li>Block all 5 lead gen windows in next week's calendar — non-negotiable</li>
+      <li>Full weekly KPI review vs. targets — are you on pace for the quarter?</li>
+      <li>Celebrate the week's wins with your team. Then log off.</li>
+    </ul>
+  </div>
+  <div style="border-top:1pt solid #ddd;padding-top:0.1in;margin-top:0.1in;display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:7.5pt;color:#888;">
+    <span><strong style="color:#1a2e1a;">5:00 PM Hard Stop</strong> — Every day. Protect your life outside work. Burnout kills long-term production.</span>
+    <span><strong style="color:#1a2e1a;">Real Estate Agent Success Planner</strong> &bull; Quarterly Edition</span>
+  </div>
+<div class="page-num">vii</div>
+</div>
+
+
+<!-- ════════════════════════════════
+     WEEKS — generated by JS
+════════════════════════════════ -->
+<div id="weeks-container"></div>
+
+
+<!-- ════════════════════════════════
+     QUARTERLY REVIEW
+════════════════════════════════ -->
+<div class="page qr-page">
+  <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">End of Quarter</p>
+  <h2>Quarterly Review &amp; Reflection</h2>
+  <div style="background:#1a2e1a;color:white;padding:0.1in 0.15in;margin-bottom:0.15in;display:flex;justify-content:space-between;font-family:Arial,sans-serif;">
+    <div><div style="font-size:7pt;opacity:0.7;text-transform:uppercase;letter-spacing:1px;">Quarter Completed</div><div style="font-size:12pt;font-weight:700;color:#7fc47a;min-width:1.2in;border-bottom:1pt solid #7fc47a;">&nbsp;</div></div>
+    <div><div style="font-size:7pt;opacity:0.7;text-transform:uppercase;letter-spacing:1px;">Total Closings</div><div style="font-size:12pt;font-weight:700;color:#7fc47a;min-width:1in;border-bottom:1pt solid #7fc47a;">&nbsp;</div></div>
+    <div><div style="font-size:7pt;opacity:0.7;text-transform:uppercase;letter-spacing:1px;">Total Sales Volume $</div><div style="font-size:12pt;font-weight:700;color:#7fc47a;min-width:1.5in;border-bottom:1pt solid #7fc47a;">&nbsp;</div></div>
+    <div><div style="font-size:7pt;opacity:0.7;text-transform:uppercase;letter-spacing:1px;">vs. Goal</div><div style="font-size:12pt;font-weight:700;color:#7fc47a;min-width:0.8in;border-bottom:1pt solid #7fc47a;">&nbsp;</div></div>
+  </div>
+
+  <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#1a2e1a;margin-bottom:0.08in;">KPI Summary — Goal vs. Actual</div>
+  <div class="kpi-compare">
+    <div class="kpic-header">Metric</div><div class="kpic-header" style="text-align:center;">Goal</div><div class="kpic-header" style="text-align:center;">Actual</div>
+    <div class="kpic-row-label">Total lead gen dials made</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">Total live conversations</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">Listing appointments held</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">Listings taken (signed)</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">Total closings (both sides)</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">New referral sources added</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">5-star reviews earned</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+    <div class="kpic-row-label">Morning Priority days completed</div><div class="kpic-cell"></div><div class="kpic-cell"></div>
+  </div>
+
+  <div class="qr-grid">
+    <div class="qr-section">
+      <div class="qrs-title">What Worked This Quarter</div>
+      <div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div>
+    </div>
+    <div class="qr-section">
+      <div class="qrs-title">What I Will Change Next Quarter</div>
+      <div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div>
+    </div>
+    <div class="qr-section">
+      <div class="qrs-title">My Top 3 Referral Sources This Quarter</div>
+      <div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div>
+    </div>
+    <div class="qr-section">
+      <div class="qrs-title">My Biggest Win / Breakthrough</div>
+      <div class="qr-line"></div><div class="qr-line"></div><div class="qr-line"></div>
+    </div>
+  </div>
+  <div style="border:1.5pt solid #4a8c3f;padding:0.12in;background:#f5fff4;">
+    <div style="font-family:Arial,sans-serif;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#1a2e1a;margin-bottom:0.06in;">My Commitment to Next Quarter</div>
+    <div style="border-bottom:0.5pt dotted #bbb;height:0.22in;margin-bottom:0.08in;"></div>
+    <div style="border-bottom:0.5pt dotted #bbb;height:0.22in;"></div>
+  </div>
+  <div style="margin-top:0.12in;display:flex;justify-content:space-between;font-family:Arial,sans-serif;font-size:7.5pt;color:#aaa;">
+    <span>Real Estate Agent Success Planner &bull; Quarterly Edition</span>
+    <span style="color:#4a8c3f;font-weight:700;">Keep going. Your next quarter starts now.</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════
+     JAVASCRIPT — Generate 14 Weeks
+════════════════════════════════ -->
+<script>
+const container = document.getElementById('weeks-container');
+
+const days = [
+  {
+    name: 'Monday',
+    short: 'MON',
+    theme: 'Lead Generation Day',
+    focus: 'Mondays are for lead generation. Block your morning, work your FSBO and expired list, and set your week\'s listing appointments before noon.',
+    wbnTitle: 'Lead Gen Calls (FSBOs / Expireds / SOI)',
+    wbnTime: '9:00–11:00 AM',
+    callLabel: 'Prospect / Lead',
+    callCount: 10,
+    sections: [
+      {
+        id: 'morning', label: 'Morning Ritual', time: '6:00–8:00 AM',
+        items: [
+          {type:'check', text:'Exercise / movement (20–30 min)'},
+          {type:'check', text:'Gratitude journal, affirmations, visualization'},
+          {type:'check', text:'Review annual goals &amp; top 3 for today'},
+          {type:'check', text:'Pull FSBO/expired call list from REDX/MLS'},
+          {type:'check', text:'Script practice 20–30 min before dialing'},
+          {type:'check', text:'Email triage — urgent responses only'},
+        ]
+      },
+      {
+        id: 'midday', label: 'Midday', time: '11:00 AM–1:00 PM',
+        items: [
+          {type:'check', text:'Follow up on voicemails from power hour'},
+          {type:'check', text:'Schedule week\'s listing appointments'},
+          {type:'fill', label:'Lunch partner:', text:''},
+          {type:'check', text:'Send "just listed/sold" postcards to neighborhood'},
+          {type:'fill', label:'Listing appt set:', text:''},
+          {type:'fill', label:'Listing appt set:', text:''},
+        ]
+      },
+      {
+        id: 'afternoon', label: 'Afternoon', time: '1:00–3:30 PM',
+        items: [
+          {type:'check', text:'Previewed new listings in farm area'},
+          {type:'check', text:'Visited open houses — met buyers &amp; agents'},
+          {type:'fill', label:'New agent met:', text:''},
+          {type:'fill', label:'New buyer contact:', text:''},
+          {type:'check', text:'Delivered marketing materials to active sellers'},
+          {type:'check', text:'Attended team office meeting if scheduled'},
+        ]
+      },
+      {
+        id: 'eod', label: 'End of Day', time: '3:30–5:00 PM',
+        items: [
+          {type:'check', text:'All call notes logged in CRM'},
+          {type:'check', text:'Thank-you notes written (min. 2)'},
+          {type:'check', text:'Weekly goal progress checked'},
+          {type:'check', text:'Tomorrow\'s listing prep started'},
+          {type:'check', text:'5:00 PM hard stop — personal time'},
+          {type:'fill', label:'One win today:', text:''},
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Tuesday',
+    short: 'TUE',
+    theme: 'Listing Appointment Day',
+    focus: 'A well-prepared listing presentation — knowing the market, the competition, and the sellers\' motivation — wins listings. Preparation is your competitive advantage.',
+    wbnTitle: 'SOI Calls + New Referral Outreach',
+    wbnTime: '9:00–11:00 AM',
+    callLabel: 'SOI Contact / New Partner',
+    callCount: 8,
+    sections: [
+      {
+        id: 'morning', label: 'Morning Ritual', time: '6:00–8:00 AM',
+        items: [
+          {type:'check', text:'Exercise / movement (20–30 min)'},
+          {type:'check', text:'Gratitude journal, affirmations, visualization'},
+          {type:'check', text:'Pull CMAs for today\'s listing appointments'},
+          {type:'check', text:'Review each seller\'s motivation and situation'},
+          {type:'check', text:'Prepare marketing plan for each appointment'},
+          {type:'check', text:'Confirm today\'s listing appointments (call day-of)'},
+        ]
+      },
+      {
+        id: 'midday', label: 'Midday', time: '11:00 AM–1:00 PM',
+        items: [
+          {type:'check', text:'Final listing prep — print or digital materials ready'},
+          {type:'check', text:'Prepare for top 3 objections (commission, price, "need to think")'},
+          {type:'fill', label:'Networking lunch with:', text:''},
+          {type:'check', text:'Bring business cards &amp; value leave-behind'},
+          {type:'fill', label:'New contact met:', text:''},
+          {type:'fill', label:'Follow-up action:', text:''},
+        ]
+      },
+      {
+        id: 'afternoon', label: 'Listing Appointments', time: '1:00–4:00 PM',
+        items: [
+          {type:'fill', label:'Appointment 1:', text:''},
+          {type:'fill', label:'Result (signed/follow-up):', text:''},
+          {type:'fill', label:'Appointment 2:', text:''},
+          {type:'fill', label:'Result (signed/follow-up):', text:''},
+          {type:'check', text:'Ended each meeting asking for referrals'},
+          {type:'check', text:'Set clear timeline &amp; next steps with each client'},
+        ]
+      },
+      {
+        id: 'eod', label: 'End of Day', time: '4:00–5:00 PM',
+        items: [
+          {type:'check', text:'New listings: photography &amp; staging scheduled'},
+          {type:'check', text:'Seller welcome email sent with next steps'},
+          {type:'check', text:'Called referring source for each new listing'},
+          {type:'check', text:'KPIs logged — listing appts held, agreements signed'},
+          {type:'check', text:'5:00 PM hard stop'},
+          {type:'fill', label:'One win today:', text:''},
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Wednesday',
+    short: 'WED',
+    theme: 'Buyers &amp; Transactions Day',
+    focus: 'Proactive communication keeps every transaction on track. Call your clients and co-op agents before they call you — it\'s the hallmark of a top producer.',
+    wbnTitle: 'Past Client Database Calls',
+    wbnTime: '9:00–11:00 AM',
+    callLabel: 'Past Client',
+    callCount: 10,
+    sections: [
+      {
+        id: 'morning', label: 'Morning Ritual', time: '6:00–8:00 AM',
+        items: [
+          {type:'check', text:'Exercise / movement (20–30 min)'},
+          {type:'check', text:'Gratitude journal, affirmations, visualization'},
+          {type:'check', text:'Full transaction file review — all active deals'},
+          {type:'check', text:'Flag contingency deadlines due this week'},
+          {type:'check', text:'Pull past client database call list from CRM'},
+          {type:'check', text:'Email triage — urgent responses only'},
+        ]
+      },
+      {
+        id: 'midday', label: 'Transaction Management', time: '11:00 AM–2:00 PM',
+        items: [
+          {type:'check', text:'Status call to every client on active transactions'},
+          {type:'check', text:'Status call to every co-op agent on active files'},
+          {type:'check', text:'Coordinated lender, title, inspector on open files'},
+          {type:'check', text:'Pre-closing prep: final walkthrough coordination'},
+          {type:'fill', label:'Urgent transaction item:', text:''},
+          {type:'check', text:'Buyer consultations: structured discovery meetings'},
+        ]
+      },
+      {
+        id: 'afternoon', label: 'Marketing &amp; CRM', time: '2:00–4:00 PM',
+        items: [
+          {type:'check', text:'Monthly market email sent to full database'},
+          {type:'check', text:'New contacts added to CRM + database contact sequence'},
+          {type:'check', text:'Database contacts tagged A/B/C for next outreach'},
+          {type:'check', text:'Sent handwritten thank-you notes (min. 2)'},
+          {type:'fill', label:'Contacts added to CRM:', text:''},
+          {type:'fill', label:'Newsletter sent to:', text:''},
+        ]
+      },
+      {
+        id: 'eod', label: 'End of Day', time: '4:00–5:00 PM',
+        items: [
+          {type:'check', text:'All transaction files updated in CRM'},
+          {type:'check', text:'Closing congratulations calls made'},
+          {type:'check', text:'KPIs logged — calls, transactions, buyer consults'},
+          {type:'check', text:'Tomorrow\'s pop-by and call list prepped'},
+          {type:'check', text:'5:00 PM hard stop'},
+          {type:'fill', label:'One win today:', text:''},
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Thursday',
+    short: 'THU',
+    theme: 'Database &amp; Referral Day',
+    focus: 'Thursdays are for your sphere. Pop-bys, handwritten notes, referral thank-yous, and personal calls to past clients generate more business than any ad spend.',
+    wbnTitle: 'Sphere / Pop-By Outreach (Buffini Model)',
+    wbnTime: '9:00–11:00 AM',
+    callLabel: 'Sphere Contact / Pop-By',
+    callCount: 8,
+    sections: [
+      {
+        id: 'morning', label: 'Morning Ritual', time: '6:00–8:00 AM',
+        items: [
+          {type:'check', text:'Exercise / movement (20–30 min)'},
+          {type:'check', text:'Gratitude journal, affirmations, visualization'},
+          {type:'check', text:'Plan today\'s pop-bys — who and what to bring'},
+          {type:'check', text:'Pull open house visitor list from last weekend'},
+          {type:'check', text:'Pull birthday / anniversary list for today\'s touches'},
+          {type:'check', text:'Email triage — urgent responses only'},
+        ]
+      },
+      {
+        id: 'midday', label: 'Handwritten Notes &amp; Gratitude', time: '11:00 AM–1:00 PM',
+        items: [
+          {type:'fill', label:'Thank-you note sent to:', text:''},
+          {type:'fill', label:'1-yr anniversary call to:', text:''},
+          {type:'fill', label:'Birthday / life event touch:', text:''},
+          {type:'check', text:'Posted closing celebration (with permission)'},
+          {type:'check', text:'Requested referral from sphere contacts called'},
+          {type:'fill', label:'Networking lunch with:', text:''},
+        ]
+      },
+      {
+        id: 'afternoon', label: 'Open House Follow-Up &amp; Consults', time: '1:00–3:30 PM',
+        items: [
+          {type:'check', text:'Called all open house visitors from last weekend'},
+          {type:'fill', label:'Buyer consult:', text:''},
+          {type:'fill', label:'Free CMA follow-up for:', text:''},
+          {type:'check', text:'Expired listing second attempt on unanswered calls'},
+          {type:'check', text:'Re-engaged database contacts overdue for a touch'},
+          {type:'check', text:'Proactive client status calls on active transactions'},
+        ]
+      },
+      {
+        id: 'eod', label: 'End of Day', time: '3:30–5:00 PM',
+        items: [
+          {type:'check', text:'All transaction files updated in CRM'},
+          {type:'check', text:'Referral sources tracked by name in CRM'},
+          {type:'check', text:'Post-close survey sent to any new closings'},
+          {type:'check', text:'KPIs logged — pop-bys, notes, referrals asked'},
+          {type:'check', text:'5:00 PM hard stop'},
+          {type:'fill', label:'One win today:', text:''},
+        ]
+      }
+    ]
+  },
+  {
+    name: 'Friday',
+    short: 'FRI',
+    theme: 'Marketing, Planning &amp; Development Day',
+    focus: 'What gets planned gets done. What doesn\'t gets forgotten. Use Fridays to review your week, batch your marketing, sharpen your skills, and set up next week before you log off.',
+    wbnTitle: 'Review Requests &amp; Sphere Outreach',
+    wbnTime: '9:00–10:30 AM',
+    callLabel: 'Review Request — Client',
+    callCount: 6,
+    sections: [
+      {
+        id: 'morning', label: 'Morning Ritual', time: '6:00–8:00 AM',
+        items: [
+          {type:'check', text:'Exercise / movement (20–30 min)'},
+          {type:'check', text:'Gratitude journal, affirmations, visualization'},
+          {type:'check', text:'Pull weekly KPI report from CRM'},
+          {type:'check', text:'Review marketing calendar for next week'},
+          {type:'check', text:'Set priorities for today\'s planning session'},
+          {type:'check', text:'Email triage — no team huddle, protect AM focus'},
+        ]
+      },
+      {
+        id: 'midday', label: 'Marketing Batch Work', time: '10:30 AM–12:00 PM',
+        items: [
+          {type:'check', text:'Recorded 1–2 short videos (market update, tour, win)'},
+          {type:'check', text:'5 social posts written &amp; scheduled for next week'},
+          {type:'check', text:'Responded to all social comments &amp; DMs'},
+          {type:'fill', label:'Content topic 1:', text:''},
+          {type:'fill', label:'Content topic 2:', text:''},
+          {type:'check', text:'Google Business Profile updated with new content'},
+        ]
+      },
+      {
+        id: 'afternoon', label: 'Professional Development (2 hrs)', time: '1:00–3:00 PM',
+        items: [
+          {type:'fill', label:'Coaching / training module:', text:''},
+          {type:'fill', label:'Book / podcast:', text:''},
+          {type:'check', text:'Script practice — role-played listing presentation'},
+          {type:'check', text:'Reviewed competitor listings &amp; market data'},
+          {type:'check', text:'Studied new neighborhoods or farm area activity'},
+          {type:'fill', label:'Key takeaway:', text:''},
+        ]
+      },
+      {
+        id: 'eod', label: 'Weekly Review &amp; Next Week Setup', time: '3:00–5:00 PM',
+        items: [
+          {type:'check', text:'Full week KPIs reviewed vs. targets'},
+          {type:'check', text:'Annual goal tracker updated — on pace?'},
+          {type:'check', text:'All 5 lead gen windows blocked for next week'},
+          {type:'check', text:'Listing appointments scheduled for Mon–Tue'},
+          {type:'check', text:'Buyer consults &amp; showings scheduled for Wed'},
+          {type:'check', text:'Celebrated week\'s wins with team. Logged off.'},
+        ]
+      }
+    ]
+  }
+];
+
+function makeCheckItem(text) {
+  return `<div class="check-item"><span class="cb">&#9633;</span> ${text}</div>`;
+}
+function makeFillItem(label) {
+  return `<div class="fill-item"><label>${label}</label><span class="fi-line"></span></div>`;
+}
+
+for (let week = 1; week <= 14; week++) {
+  // ── WEEK PLANNING PAGE
+  const weekPage = document.createElement('div');
+  weekPage.className = 'page week-plan-page';
+  weekPage.innerHTML = `
+    <p style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.06in;">Weekly Action Plan</p>
+    <h2>Week ${week} of 14</h2>
+    <div class="week-banner">
+      <div class="wb-week">Week ${week}</div>
+      <div style="display:flex;gap:0.2in;align-items:center;">
+        <div class="wb-date"><div style="margin-bottom:0.03in;">Week of</div><span class="wb-date-line"></span></div>
+        <div class="wb-date"><div style="margin-bottom:0.03in;">Listing appts target this week</div><span class="wb-date-line" style="min-width:0.8in;"></span></div>
+        <div class="wb-date"><div style="margin-bottom:0.03in;">Contracts target this week</div><span class="wb-date-line" style="min-width:0.8in;"></span></div>
+      </div>
+    </div>
+    <div class="week-plan-grid">
+      <div class="wp-section">
+        <div class="wps-title">This Week's Lead Gen Call List (Monday)</div>
+        ${Array.from({length:8},()=>`<div class="wp-line"></div>`).join('')}
+      </div>
+      <div class="wp-section">
+        <div class="wps-title">Top 3 Priorities This Week</div>
+        ${[1,2,3].map(n=>`<div style="display:flex;gap:0.06in;align-items:baseline;margin-bottom:0.08in;"><span style="font-family:Arial,sans-serif;font-size:9pt;font-weight:700;color:#4a8c3f;min-width:0.14in;">${n}.</span><span class="wp-line" style="flex:1;"></span></div>`).join('')}
+        <div class="wps-title" style="margin-top:0.1in;">Sphere / Past Client Calls (Thursday)</div>
+        ${Array.from({length:4},()=>`<div class="wp-line"></div>`).join('')}
+      </div>
+      <div class="wp-section">
+        <div class="wps-title">Referral Partner Meetings This Week</div>
+        ${[1,2,3].map(()=>`<div style="display:flex;gap:0.08in;border-bottom:0.5pt dotted #ddd;padding:0.04in 0;"><span class="wp-line" style="flex:2;"></span><span style="font-family:Arial,sans-serif;font-size:7pt;color:#aaa;white-space:nowrap;">Day/Time:</span><span class="wp-line" style="flex:1;"></span></div>`).join('')}
+        <div class="wps-title" style="margin-top:0.1in;">Past Client Follow-Ups (Wednesday)</div>
+        ${Array.from({length:3},()=>`<div class="wp-line"></div>`).join('')}
+      </div>
+      <div class="wp-section">
+        <div class="wps-title">Weekly KPI Targets (fill before the week starts)</div>
+        ${[
+          ['Lead gen dials target',''],
+          ['Live conversations target',''],
+          ['Listing appts target',''],
+          ['Buyer follow-ups','All active'],
+          ['Handwritten notes target','5+'],
+          ['Social posts target','5'],
+        ].map(([l,h])=>`<div class="goal-row"><span class="gr-label">${l}</span><span class="goal-line"></span>${h?`<span style="font-size:7pt;color:#bbb;margin-left:0.04in;">${h}</span>`:''}</div>`).join('')}
+      </div>
+    </div>
+    <div class="week-kpi-row">
+      ${days.map(d=>`<div class="wk-cell"><div class="wkc-day">${d.short}</div><div class="wkc-box"></div><div class="wkc-label">Dials Made</div><div class="wkc-box" style="margin-top:0.03in;"></div><div class="wkc-label">Appts / Contacts</div></div>`).join('')}
+    </div>
+    <div class="weekly-wins">
+      <div class="ww-title">Week ${week} Wins &amp; Notes</div>
+      ${Array.from({length:3},()=>`<div class="ww-line"></div>`).join('')}
+    </div>
+    <div class="page-num">${week}-0</div>
+  `;
+  container.appendChild(weekPage);
+
+  // ── DAILY PAGES
+  days.forEach((day, di) => {
+    const dp = document.createElement('div');
+    dp.className = 'page';
+
+    const half = Math.ceil(day.callCount / 2);
+    let leftCalls = '', rightCalls = '';
+    for (let c = 1; c <= day.callCount; c++) {
+      const row = `<div class="call-row"><span class="cr-num">${c}</span><span class="cr-line"></span><span class="cr-check">&#9633;</span><span class="cr-label"> Reached</span></div>`;
+      if (c <= half) leftCalls += row; else rightCalls += row;
+    }
+
+    let sectionsHTML = '';
+    day.sections.forEach(sec => {
+      const leftItems = sec.items.slice(0, Math.ceil(sec.items.length / 2));
+      const rightItems = sec.items.slice(Math.ceil(sec.items.length / 2));
+      function renderItem(item) {
+        if (item.type === 'check') return makeCheckItem(item.text);
+        if (item.type === 'fill')  return makeFillItem(item.label);
+        return '';
+      }
+      sectionsHTML += `
+        <div class="day-section">
+          <div class="ds-header ${sec.id}">
+            <span class="ds-time">${sec.time}</span>
+            <span class="ds-title">${sec.label}</span>
+          </div>
+          <div class="ds-body">
+            <div>${leftItems.map(renderItem).join('')}</div>
+            <div>${rightItems.map(renderItem).join('')}</div>
+          </div>
+        </div>
+      `;
+    });
+
+    dp.innerHTML = `
+      <div class="daily-page">
+        <div class="daily-header">
+          <div class="dh-day-block">
+            <div class="dh-day-name">${day.name}</div>
+            <div class="dh-day-theme">${day.theme}</div>
+          </div>
+          <div class="dh-meta">
+            <div class="dh-meta-top">
+              <div class="dh-field"><label>Date</label><span class="dh-line"></span></div>
+              <div class="dh-field"><label>Week</label><span class="dh-line" style="min-width:0.3in;"></span></div>
+              <div class="dh-field"><label>Day</label><span class="dh-line" style="min-width:0.3in;"></span></div>
+              <div class="dh-wbn">MORNING PRIORITY</div>
+            </div>
+            <div class="dh-focus">${day.focus}</div>
+          </div>
+        </div>
+
+        <div class="wbn-block">
+          <div class="wbn-block-header">
+            <span class="wbnh-tag">&#128308; Morning Priority Block</span>
+            <span class="wbnh-time">${day.wbnTime} — Door closed. Email closed. Lead generate first.</span>
+            <span class="wbnh-title">${day.wbnTitle}</span>
+          </div>
+          <div class="wbn-block-body">
+            <div>${leftCalls}</div>
+            <div>
+              ${rightCalls}
+              <div style="display:flex;gap:0.06in;margin-top:0.06in;border-top:0.5pt solid #eee;padding-top:0.06in;">
+                <div style="flex:1;text-align:center;border:0.5pt solid #ddd;padding:0.04in;">
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;color:#888;">Dials Made</div>
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;height:0.18in;border-bottom:1pt solid #ddd;"></div>
+                </div>
+                <div style="flex:1;text-align:center;border:0.5pt solid #ddd;padding:0.04in;">
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;color:#888;">Connected</div>
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;height:0.18in;border-bottom:1pt solid #ddd;"></div>
+                </div>
+                <div style="flex:1;text-align:center;border:0.5pt solid #ddd;padding:0.04in;">
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;color:#888;">Appts Set</div>
+                  <div style="font-family:Arial,sans-serif;font-size:7pt;height:0.18in;border-bottom:1pt solid #ddd;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        ${sectionsHTML}
+
+        <div class="daily-kpi">
+          <span class="dkpi-label">Today's KPIs</span>
+          <div class="dkpi-items">
+            <div class="dkpi-item"><label>Dials Made</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Connected</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Listing Appts Set</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Referrals Asked</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Referrals Received</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Thank-You Notes</label><span class="di-box"></span></div>
+            <div class="dkpi-item"><label>Speed to Lead (min)</label><span class="di-box"></span></div>
+          </div>
+        </div>
+
+        <div class="daily-win">
+          <div class="dw-label">Today's Win / Gratitude</div>
+          <div class="dw-content">
+            <div class="dw-line"></div>
+            <div class="dw-line"></div>
+          </div>
+        </div>
+      </div>
+      <div class="page-num">${week}-${di+1}</div>
+    `;
+
+    container.appendChild(dp);
+
+    // ── NOTES PAGE
+    const np = document.createElement('div');
+    np.className = 'page';
+    const noteLines = Array.from({length:22}, () => `<div class="np-note-line"></div>`).join('');
+    const todoItems = Array.from({length:10}, (_,i) =>
+      `<div class="np-todo-item"><span class="np-todo-cb">&#9633;</span><span class="np-todo-line"></span>${i < 3 ? '<span class="np-priority-flag">priority</span>' : ''}</div>`
+    ).join('');
+    np.innerHTML = `
+      <div class="notes-page">
+        <div class="np-header">
+          <div class="np-day-label">${day.name} &mdash; Notes &amp; To-Do &nbsp;<span style="font-size:8pt;font-weight:400;color:#888;text-transform:none;letter-spacing:0;">Week ${week}</span></div>
+          <div class="np-date-field">Date &nbsp;<span class="np-date-line"></span></div>
+        </div>
+        <div class="np-section-title">Notes</div>
+        <div class="np-notes-area">${noteLines}</div>
+        <div class="np-todo-area">
+          <div class="np-section-title" style="margin-bottom:0.1in;">To-Do &nbsp;<span style="font-weight:400;color:#888;font-size:6.5pt;letter-spacing:0;text-transform:none;">First 3 are priority items</span></div>
+          ${todoItems}
+        </div>
+      </div>
+      <div class="page-num">${week}-${di+1}n</div>
+    `;
+    container.appendChild(np);
+
+    // ── WEEKEND PAGE (after Friday)
+    if (di === days.length - 1) {
+      const nextWeek = week < 14 ? week + 1 : week;
+      const fillLines = (n) => Array.from({length:n}, () => `<div class="sun-fill-line"></div>`).join('');
+      const wkndNoteLines = Array.from({length:5}, () => `<div class="np-note-line"></div>`).join('');
+
+      const wknd = document.createElement('div');
+      wknd.className = 'page';
+      wknd.innerHTML = `
+        <div class="weekend-page">
+          <div class="weekend-header">
+            <div>
+              <div style="font-family:Arial,sans-serif;font-size:7pt;letter-spacing:3px;text-transform:uppercase;color:#4a8c3f;margin-bottom:0.05in;">Week ${week} Review &nbsp;&bull;&nbsp; Week ${nextWeek} Preview</div>
+              <div class="weekend-day-label">Weekend &mdash; Review &amp; Plan Ahead</div>
+            </div>
+            <div style="font-family:Arial,sans-serif;font-size:7.5pt;color:#888;">Week of &nbsp;<span class="np-date-line"></span></div>
+          </div>
+
+          <div style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#4a8c3f;margin-bottom:0.07in;">Notes</div>
+          <div style="margin-bottom:0.15in;">${wkndNoteLines}</div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.16in;">
+
+            <!-- LEFT: KPI Summary + Reflection -->
+            <div style="display:flex;flex-direction:column;gap:0.13in;">
+              <div>
+                <div style="font-family:Arial,sans-serif;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#1a2e1a;margin-bottom:0.08in;">&#9733; Weekly KPI Summary</div>
+                <table class="kpi-weekly-table">
+                  <thead>
+                    <tr>
+                      <th style="text-align:left;">Metric</th>
+                      <th>M</th><th>T</th><th>W</th><th>Th</th><th>F</th>
+                      <th class="kpiwt-total-head">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Dials Made</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                    <tr><td>Conversations</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                    <tr><td>Listing Appts Set</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                    <tr><td>Referrals Asked</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                    <tr><td>Referrals Received</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                    <tr><td>Thank-You Notes</td><td></td><td></td><td></td><td></td><td></td><td class="kpiwt-total"></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">What Worked This Week</div>
+                <div class="np-note-line"></div>
+                <div class="np-note-line"></div>
+                <div class="np-note-line"></div>
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">What to Improve Next Week</div>
+                <div class="np-note-line"></div>
+                <div class="np-note-line"></div>
+                <div class="np-note-line"></div>
+              </div>
+            </div>
+
+            <!-- RIGHT: Week Ahead Planning -->
+            <div style="display:flex;flex-direction:column;gap:0.13in;">
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">Top 3 Priorities — Week ${nextWeek}</div>
+                ${[1,2,3].map(n=>`<div style="display:flex;gap:0.06in;align-items:baseline;margin-bottom:0.08in;"><span style="font-family:Arial,sans-serif;font-size:9pt;font-weight:700;color:#4a8c3f;min-width:0.15in;">${n}.</span><div class="sun-fill-line" style="flex:1;margin-bottom:0;"></div></div>`).join('')}
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">Lead Gen Call List — Monday</div>
+                ${fillLines(5)}
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">Active Buyers to Follow Up</div>
+                ${fillLines(4)}
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;">
+                <div class="weekend-section-title">Referral Partner Meetings to Schedule</div>
+                ${fillLines(3)}
+              </div>
+              <div style="border:1pt solid #ddd;padding:0.11in;flex:1;">
+                <div class="weekend-section-title">Mindset / Intention for the Week</div>
+                ${fillLines(3)}
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="page-num">${week}-WKD</div>
+      `;
+      container.appendChild(wknd);
+    }
+  });
+}
+</script>
+
+<button class="no-print" onclick="window.print()">Print / Save as PDF</button>
+
+</body>
+</html>

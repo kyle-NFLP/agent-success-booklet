@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate Agent Weekly Success Roadmap — V2</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f0f2f5;
+      color: #1a1a2e;
+      font-size: 13px;
+    }
+
+    /* ── COVER PAGE ───────────────────────────────────── */
+    .cover {
+      background: linear-gradient(135deg, #1a2e1a 0%, #2d5a27 50%, #4a8c3f 100%);
+      color: white;
+      text-align: center;
+      padding: 80px 40px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      page-break-after: always;
+    }
+    .cover .logo-badge {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; margin: 0 auto 24px;
+    }
+    .cover h1 {
+      font-size: 42px; font-weight: 800;
+      letter-spacing: -1px; margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .cover h2 {
+      font-size: 22px; font-weight: 300;
+      opacity: 0.85; margin-bottom: 40px;
+    }
+    .cover .tagline {
+      font-size: 15px; opacity: 0.7;
+      max-width: 560px; line-height: 1.7;
+      margin-bottom: 48px;
+    }
+    .cover .pillars-row {
+      display: flex; gap: 24px; flex-wrap: wrap;
+      justify-content: center; margin-bottom: 48px;
+    }
+    .cover .pillar {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 16px 22px;
+      min-width: 140px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .cover .pillar span {
+      display: block; font-size: 22px; margin-bottom: 6px;
+    }
+    .cover .sources {
+      font-size: 11px; opacity: 0.5;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── SECTION WRAPPER ─────────────────────────────── */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4a8c3f;
+      margin-bottom: 6px;
+    }
+    .section-heading {
+      font-size: 26px; font-weight: 800;
+      color: #1a2e1a; margin-bottom: 28px;
+      border-bottom: 3px solid #4a8c3f;
+      padding-bottom: 10px;
+    }
+
+    /* ── PHILOSOPHY CARDS ────────────────────────────── */
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .phil-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      border-top: 4px solid;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .phil-card.ferry  { border-color: #e63946; }
+    .phil-card.mike   { border-color: #2a9d8f; }
+    .phil-card.buffini{ border-color: #f4a261; }
+    .phil-card.keller { border-color: #6c5ce7; }
+
+    .phil-card .phil-name {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      opacity: 0.5; margin-bottom: 6px;
+    }
+    .phil-card .phil-headline {
+      font-size: 14px; font-weight: 700;
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .phil-card .phil-body {
+      font-size: 12px; line-height: 1.6; opacity: 0.75;
+    }
+    .phil-card ul { padding-left: 14px; }
+    .phil-card li { margin-bottom: 4px; }
+
+    /* ── PRINCIPLES ──────────────────────────────────── */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+    .principle {
+      background: white;
+      border-radius: 10px;
+      padding: 16px 18px;
+      display: flex; gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .principle .num {
+      background: #4a8c3f;
+      color: white;
+      border-radius: 50%;
+      width: 26px; height: 26px;
+      min-width: 26px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 12px;
+    }
+    .principle .ptitle {
+      font-weight: 700; font-size: 13px;
+      margin-bottom: 4px;
+    }
+    .principle .pbody {
+      font-size: 12px; opacity: 0.7; line-height: 1.5;
+    }
+
+    /* ── WEEKLY OVERVIEW TABLE ───────────────────────── */
+    .weekly-table-wrap {
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      margin-bottom: 48px;
+    }
+    .weekly-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .weekly-table th {
+      padding: 14px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .weekly-table th.time-col { background: #1a2e1a; color: white; width: 90px; }
+    .weekly-table th.mon-col  { background: #e63946; color: white; }
+    .weekly-table th.tue-col  { background: #4a8c3f; color: white; }
+    .weekly-table th.wed-col  { background: #2a9d8f; color: white; }
+    .weekly-table th.thu-col  { background: #f4a261; color: white; }
+    .weekly-table th.fri-col  { background: #6c5ce7; color: white; }
+    .weekly-table th .day-label { font-size: 16px; display: block; margin-bottom: 2px; }
+    .weekly-table th .day-theme { font-size: 9px; letter-spacing: 1.5px; opacity: 0.85; }
+
+    .weekly-table td {
+      padding: 8px 10px;
+      vertical-align: top;
+      border: 1px solid #f0f2f5;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+    .weekly-table td.time-cell {
+      background: #f7f8fa;
+      font-weight: 700;
+      font-size: 11px;
+      text-align: right;
+      color: #555;
+      white-space: nowrap;
+    }
+
+    /* row-level backgrounds */
+    .weekly-table tr.morning-ritual td:not(.time-cell) { background: #fff9f0; }
+    .weekly-table tr.power-hour td:not(.time-cell)     { background: #f0fff4; }
+    .weekly-table tr.midday td:not(.time-cell)          { background: #f0f8ff; }
+    .weekly-table tr.afternoon td:not(.time-cell)       { background: #f5f0ff; }
+    .weekly-table tr.eod td:not(.time-cell)             { background: #faf0ff; }
+    .weekly-table tr.hardstop td {
+      background: #1a2e1a; color: white; text-align: center;
+      font-weight: 700; font-size: 12px; letter-spacing: 1px;
+    }
+    .weekly-table tr.section-label td {
+      background: #1a2e1a; color: rgba(255,255,255,0.6);
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; text-align: center;
+      padding: 5px 10px;
+    }
+
+    .cell-title { font-weight: 700; margin-bottom: 3px; font-size: 12px; }
+    .cell-items { padding-left: 12px; }
+    .cell-items li { margin-bottom: 2px; }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      padding: 2px 6px; border-radius: 4px;
+      margin-bottom: 4px;
+    }
+    .badge-red    { background: #ffe5e5; color: #c0392b; }
+    .badge-blue   { background: #e5f0ff; color: #1a5fa8; }
+    .badge-green  { background: #e5fff0; color: #1a7a40; }
+    .badge-orange { background: #fff3e5; color: #b85c00; }
+    .badge-purple { background: #f0e5ff; color: #5b00b8; }
+    .badge-yellow { background: #fffbe5; color: #8a7000; }
+
+    /* ── DAILY DETAIL CARDS ──────────────────────────── */
+    .day-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .day-detail-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    }
+    .day-detail-card.friday { grid-column: 1 / -1; }
+    .ddc-header {
+      padding: 16px 20px;
+      color: white;
+    }
+    .ddc-header.mon  { background: linear-gradient(90deg, #e63946, #c0392b); }
+    .ddc-header.tue  { background: linear-gradient(90deg, #4a8c3f, #2d6e23); }
+    .ddc-header.wed  { background: linear-gradient(90deg, #2a9d8f, #1a7a6e); }
+    .ddc-header.thu  { background: linear-gradient(90deg, #f4a261, #e07b30); }
+    .ddc-header.fri  { background: linear-gradient(90deg, #6c5ce7, #5b00b8); }
+    .ddc-header .dday { font-size: 20px; font-weight: 800; }
+    .ddc-header .dtheme { font-size: 12px; opacity: 0.85; font-weight: 400; }
+    .ddc-header .dfocus { font-size: 11px; opacity: 0.7; margin-top: 4px; font-style: italic; }
+
+    .ddc-body { padding: 18px 20px; }
+    .time-block-row {
+      display: flex; gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f2f5;
+    }
+    .time-block-row:last-child { border-bottom: none; margin-bottom: 0; }
+    .tbr-time {
+      min-width: 90px;
+      font-weight: 700; font-size: 11px;
+      color: #888;
+      padding-top: 2px;
+    }
+    .tbr-content { flex: 1; }
+    .tbr-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .tbr-list { padding-left: 14px; }
+    .tbr-list li { font-size: 12px; line-height: 1.6; color: #333; }
+    .tbr-note {
+      font-size: 11px; color: #888;
+      font-style: italic; margin-top: 4px;
+    }
+    .protected-block {
+      background: #f0fff4;
+      border-left: 3px solid #4a8c3f;
+      border-radius: 4px;
+      padding: 4px 8px;
+      margin-bottom: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #2d6e23;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── KPI TRACKER ─────────────────────────────────── */
+    .kpi-section { margin-bottom: 48px; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .kpi-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .kpi-card-title {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #4a8c3f; margin-bottom: 12px;
+    }
+    .kpi-item {
+      display: flex; justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f2f5;
+      font-size: 12px;
+    }
+    .kpi-item:last-child { border-bottom: none; }
+    .kpi-label { flex: 1; }
+    .kpi-target {
+      background: #e5f5e8;
+      color: #2d6e23;
+      font-weight: 700; font-size: 11px;
+      padding: 2px 8px; border-radius: 4px;
+      margin-right: 8px; min-width: 50px; text-align: center;
+    }
+    .kpi-box {
+      width: 60px; height: 22px;
+      border: 1.5px solid #ddd;
+      border-radius: 4px;
+    }
+
+    /* ── MORNING RITUAL ─────────────────────────────── */
+    .ritual-section { margin-bottom: 48px; }
+    .ritual-steps {
+      display: flex; flex-wrap: wrap; gap: 14px;
+    }
+    .ritual-step {
+      background: white;
+      border-radius: 10px;
+      padding: 14px 16px;
+      flex: 1; min-width: 160px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border-top: 3px solid #4a8c3f;
+    }
+    .ritual-step .rstep-num {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: #4a8c3f; margin-bottom: 4px;
+    }
+    .ritual-step .rstep-title {
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .ritual-step .rstep-time {
+      font-size: 11px; color: #888;
+    }
+
+    /* ── REFERRAL PARTNER SYSTEM ─────────────────────── */
+    .partner-section { margin-bottom: 48px; }
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .partner-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .partner-card-title {
+      font-size: 13px; font-weight: 700;
+      margin-bottom: 12px;
+      display: flex; gap: 8px; align-items: center;
+    }
+    .partner-tier {
+      display: flex; align-items: center; gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px solid #f0f2f5;
+      font-size: 12px;
+    }
+    .partner-tier:last-child { border-bottom: none; }
+    .tier-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      min-width: 10px;
+    }
+
+    /* ── MINDSET SECTION ─────────────────────────────── */
+    .mindset-section { margin-bottom: 48px; }
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .quote-card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-left: 4px solid;
+    }
+    .quote-card:nth-child(1) { border-color: #e63946; }
+    .quote-card:nth-child(2) { border-color: #4a8c3f; }
+    .quote-card:nth-child(3) { border-color: #f4a261; }
+    .quote-card:nth-child(4) { border-color: #6c5ce7; }
+    .quote-text {
+      font-size: 15px; font-weight: 600;
+      line-height: 1.5; font-style: italic;
+      color: #1a1a2e; margin-bottom: 10px;
+    }
+    .quote-source {
+      font-size: 11px; opacity: 0.55; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    .footer {
+      background: #1a2e1a;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 28px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+    .footer strong { color: rgba(255,255,255,0.8); }
+
+    /* ── PRINT ─────────────────────────────────────── */
+    @media print {
+      body { background: white; }
+      .page { max-width: 100%; padding: 20px; }
+      .cover { min-height: auto; padding: 40px; }
+    }
+
+    /* ── PAGE BREAK HELPERS ──────────────────────────── */
+    .page-break { page-break-before: always; }
+    .no-break { page-break-inside: avoid; }
+
+    /* ── COLOR LEGEND ──────────────────────────────── */
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 20px;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600;
+    }
+    .legend-dot {
+      width: 12px; height: 12px; border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     COVER PAGE
+══════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="logo-badge">&#127968;</div>
+  <h1>Real Estate Agent<br>Weekly Success Roadmap</h1>
+  <h2>The Complete Time-Block System for Top-Producing Agents</h2>
+  <p class="tagline">
+    A comprehensive, field-tested daily and weekly schedule synthesized from the
+    industry's leading coaching platforms — built to maximize listings, protect your
+    prospecting time, and create a sustainable, profitable real estate business.
+  </p>
+  <div class="pillars-row">
+    <div class="pillar"><span>&#128200;</span>List More</div>
+    <div class="pillar"><span>&#129309;</span>Build Trust</div>
+    <div class="pillar"><span>&#128336;</span>Work Smart</div>
+    <div class="pillar"><span>&#127775;</span>Live Better</div>
+  </div>
+  <p class="sources">
+    Synthesized from: Tom Ferry Coaching &bull; Mike Ferry Organization &bull;
+    Buffini &amp; Company &bull; Keller Williams MAPS/BOLD &bull; Icenhower Coaching &amp; Consulting &bull; YesMasters (Kevin Ward) &bull; Steve Shull Performance Coaching &bull; Dale Archdekin / Smart Sales Coaching &bull; SkySlope Ayce &bull; MaverickRE
+  </p>
+</div>
+
+
+<div class="page" style="padding-top: 60px;">
+  <p class="section-title">Legal Notice</p>
+  <h2 class="section-heading">Disclaimer &amp; Trademarks Notice</h2>
+  <div style="background: #f8f9fa; border-left: 4px solid #4a8c3f; padding: 20px 24px; margin-bottom: 20px; font-size: 12px; line-height: 1.7; color: #333;">
+    <p style="margin-bottom: 12px;"><em>This roadmap is an independent educational synthesis of publicly available coaching philosophies and industry best practices. It is not affiliated with, endorsed by, or sponsored by any of the coaching organizations or individuals referenced herein.</em></p>
+    <p style="margin-bottom: 12px;"><em>All product names, program names, book titles, and trademarks mentioned — including but not limited to BOLD™, MAPS Coaching™, The ONE Thing™, Working by Referral™, 33 Touch™, 8x8™, The Book of YES™, Full Fee Agent™, UNSCRIPTED™, SkySlope®, SkySlope Ayce™, MaverickRE™, and all others — are the property of their respective owners and are used here solely for identification and educational commentary purposes.</em></p>
+    <p><em>Readers are encouraged to explore each coaching platform directly for their complete programs and training materials.</em></p>
+  </div>
+</div>
+
+    <div class="page" style="page-break-before: always;">
+      <p class="section-title">Lead Management</p>
+      <h2 class="section-heading">The Lead Priority System</h2>
+      <p style="margin-bottom: 16px; font-size: 13px; color: #555;">Not all leads are equal. This system ensures you spend the most time on the highest-probability opportunities.</p>
+      <table style="width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 16px;">
+        <tr style="background: #1a2e1a; color: white;">
+          <th style="padding: 10px 12px; text-align: left; width: 12%;">Category</th>
+          <th style="padding: 10px 12px; text-align: left; width: 28%;">Definition</th>
+          <th style="padding: 10px 12px; text-align: left; width: 18%;">Follow-Up</th>
+          <th style="padding: 10px 12px; text-align: left; width: 42%;">Action</th>
+        </tr>
+        <tr style="background: #fff3f3;"><td style="padding: 10px 12px; font-weight: 700; color: #c0392b;">HOT (A)</td><td style="padding: 10px 12px;">Ready to buy/sell within 30 days. Has motivation, timeline, and financial ability.</td><td style="padding: 10px 12px;">Every 1-3 days</td><td style="padding: 10px 12px;">Priority #1 every morning. Call first. Set appointment immediately.</td></tr>
+        <tr style="background: #fff8e1;"><td style="padding: 10px 12px; font-weight: 700; color: #e67e22;">WARM (B)</td><td style="padding: 10px 12px;">Planning to move in 30-90 days. Interested but not urgent.</td><td style="padding: 10px 12px;">Every 7-14 days</td><td style="padding: 10px 12px;">Consistent nurture. Provide value (CMAs, market updates). Stay top of mind.</td></tr>
+        <tr style="background: #e8f5e9;"><td style="padding: 10px 12px; font-weight: 700; color: #27ae60;">COOL (C)</td><td style="padding: 10px 12px;">Planning to move in 3-12 months. Early stage.</td><td style="padding: 10px 12px;">Every 14-30 days</td><td style="padding: 10px 12px;">Monthly check-in. Add to email drip and market update list.</td></tr>
+        <tr style="background: #e3f2fd;"><td style="padding: 10px 12px; font-weight: 700; color: #2980b9;">NURTURE</td><td style="padding: 10px 12px;">Had a conversation but no clear timeline.</td><td style="padding: 10px 12px;">Every 14-30 days</td><td style="padding: 10px 12px;">Multi-channel touches: call + text + email. Provide value without pressure.</td></tr>
+        <tr style="background: #f3e5f5;"><td style="padding: 10px 12px; font-weight: 700; color: #8e44ad;">SOI / DB</td><td style="padding: 10px 12px;">Past clients, sphere of influence, personal contacts.</td><td style="padding: 10px 12px;">33-40 touches/year</td><td style="padding: 10px 12px;">The long game. Calls, notes, pop-bys, events, mailers.</td></tr>
+        <tr style="background: #f5f5f5;"><td style="padding: 10px 12px; font-weight: 700; color: #7f8c8d;">DEAD</td><td style="padding: 10px 12px;">Will not transact. Wrong number. No potential.</td><td style="padding: 10px 12px;">Remove</td><td style="padding: 10px 12px;">Delete or archive. Keep your CRM clean.</td></tr>
+      </table>
+      <div style="background: #fff3e0; border-left: 4px solid #e67e22; padding: 14px 18px; font-size: 12px; line-height: 1.6;">
+        <strong>The Speed-to-Lead Rule:</strong> New online leads must be contacted within <strong>5 minutes</strong>. Days 1-7 after first contact require intensive multi-channel outreach (call + text + email). Most agents give up after 3-4 attempts — that's where the opportunity is.
+      </div>
+    </div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 1 — PHILOSOPHY + PRINCIPLES
+══════════════════════════════════════════════════ -->
+<div class="page">
+
+  <!-- COACHING PHILOSOPHIES -->
+  <p class="section-title">Foundation</p>
+  <h2 class="section-heading">What the Best Coaching Systems Teach</h2>
+
+  <div class="philosophy-grid">
+    <div class="phil-card ferry no-break">
+      <div class="phil-name">Tom Ferry Coaching</div>
+      <div class="phil-headline">"Your morning routine and daily discipline determine your future results."</div>
+      <div class="phil-body">
+        Built on the 8 Levels of Performance — a framework that matches your strategy to your stage of business growth.
+        <ul style="margin-top:8px;">
+          <li>Lead generation is non-negotiable at every level</li>
+          <li>Mindset + Skills + Strategy = Results</li>
+          <li>Track every metric — activity drives outcome</li>
+          <li>Use his illum platform to plan and measure</li>
+          <li>Daily routine and structure drive consistent results</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phil-card mike no-break">
+      <div class="phil-name">Mike Ferry Organization</div>
+      <div class="phil-headline">"Master the fundamentals. Daily prospecting is the foundation of every successful career."</div>
+      <div class="phil-body">
+        Five decades of coaching on one belief: master the fundamentals. Scripts, role-play, and 3 hours of prospecting per day.
+        <ul style="margin-top:8px;">
+          <li>3 hours uninterrupted prospecting every day</li>
+          <li>Script practice 20–30 min before phones open</li>
+          <li>FSBOs, expireds, sphere, circle prospecting</li>
+          <li>20 contacts/hour × 5% conversion = 3 appts/day</li>
+          <li>"Ask more, tell less" — questions, not pitches</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phil-card buffini no-break">
+      <div class="phil-name">Buffini &amp; Company</div>
+      <div class="phil-headline">"Build a referral-based business. Serve your clients so well they become your marketing."</div>
+      <div class="phil-body">
+        82% of all transactions come from personal contacts, referrals, and past clients. Build relationships — not transactions.
+        <ul style="margin-top:8px;">
+          <li>33 touches/year per database contact</li>
+          <li>The Pop-By — highest-converting personal touch</li>
+          <li>Handwritten personal notes monthly</li>
+          <li>Client appreciation events annually</li>
+          <li>"A referred client is a pre-sold client"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phil-card keller no-break">
+      <div class="phil-name">Gary Keller / The ONE Thing</div>
+      <div class="phil-headline">"Lead generation fuels every level of your business growth."</div>
+      <div class="phil-body">
+        The 3 L's: Leads, Listings, and Leverage. Time block 4 hours per day for your ONE Thing. The listing agent wins.
+        <ul style="margin-top:8px;">
+          <li>Listings are maximum leverage — create buyer leads</li>
+          <li>Time block 4 hrs/day for lead generation</li>
+          <li>systematic database contact plan: 33 contacts per person per year</li>
+          <li>10% of GCI on lead gen / marketing</li>
+          <li>"Success is sequential, not simultaneous"</li>
+        </ul>
+      </div>
+    </div>
+        <div class="philosophy-card" style="border-top: 4px solid #e67e22;">
+          <div class="card-quote">"Data without action is just noise. Systems turn data into transactions."</div>
+          <h3>Icenhower Coaching (ICC)</h3>
+          <p>Data-driven systems: the 1-3-5 Business Plan, high-frequency SOI contact programs with strong reported ROI, and conversion metrics benchmarked by skill level.</p>
+          <ul>
+            <li>Structured business planning with measurable milestones</li>
+            <li>High-frequency database contact systems</li>
+            <li>Conversion metrics by skill level (beginner to expert)</li>
+            <li>Geographic farming methodology</li>
+            <li>Transaction management checklists for every stage</li>
+          </ul>
+        </div>
+        <div class="philosophy-card" style="border-top: 4px solid #2ecc71;">
+          <div class="card-quote">"Professionals train based on commitment. Amateurs train when they feel like it."</div>
+          <h3>YesMasters (Kevin Ward)</h3>
+          <p>Scripts mastery meets NLP-informed communication. Dedicated morning prospecting hours. Holistic life-domain balance alongside aggressive business building.</p>
+          <ul>
+            <li>Field-tested dialogue frameworks for every scenario</li>
+            <li>Dedicated morning prospecting hours daily</li>
+            <li>NLP-informed communication and rapport techniques</li>
+            <li>Daily mindset declarations and commitment rituals</li>
+            <li>Impressive pre-listing presentation systems</li>
+          </ul>
+        </div>
+        <div class="philosophy-card" style="border-top: 4px solid #1abc9c;">
+          <div class="card-quote">"The agent who listens best wins the listing."</div>
+          <h3>Steve Shull Performance Coaching</h3>
+          <p>Tactical empathy communication (originally developed by Chris Voss). Pre-listing qualification frameworks. Full-commission business philosophy — charge what you're worth.</p>
+          <ul>
+            <li>Tactical empathy: mirroring, labeling, and preemptive acknowledgment</li>
+            <li>Pre-qualification to avoid wasted listing appointments</li>
+            <li>CRM as an active relationship management engine</li>
+            <li>Sustainable high-performance model (anti-burnout)</li>
+            <li>Mindfulness as a foundational business practice</li>
+          </ul>
+        </div>
+        <div class="philosophy-card" style="border-top: 4px solid #e74c3c;">
+          <div class="card-quote">"Don't fight the objection. Understand it."</div>
+          <h3>Dale Archdekin / Smart Sales Coaching</h3>
+          <p>The lead conversion specialist. Conversational sales methodology with structured objection response frameworks. Speed-to-lead discipline — contact within 5 minutes.</p>
+          <ul>
+            <li>PPO framework: Perspective, Process, Outcome</li>
+            <li>API response method: Acknowledge, Paraphrase, Inquire</li>
+            <li>Speed-to-lead: new leads contacted within 5 minutes</li>
+            <li>Systematic lead categorization and prioritization</li>
+            <li>Live call review coaching for continuous improvement</li>
+          </ul>
+        </div>
+  </div>
+
+  <!-- UNIVERSAL PRINCIPLES -->
+  <p class="section-title">Universal Success Laws</p>
+  <h2 class="section-heading">10 Principles Every Top-Producing Agent Lives By</h2>
+
+  <div class="principles-grid">
+    <div class="principle no-break">
+      <div class="num">1</div>
+      <div>
+        <div class="ptitle">Prospect First, Always</div>
+        <div class="pbody">Revenue-generating activities own your morning. Admin, email, and paperwork are scheduled around prospecting — never the reverse.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">2</div>
+      <div>
+        <div class="ptitle">Listings Are Your Leverage</div>
+        <div class="pbody">A listing generates sign calls, buyer leads, market presence, and two-sided commission potential. Listings are the highest-leverage activity in your business.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">3</div>
+      <div>
+        <div class="ptitle">Consistency Beats Intensity</div>
+        <div class="pbody">Five calls every single day outperforms 50 calls once a month. Daily habits compound into extraordinary results over 90 days, 180 days, a career.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">4</div>
+      <div>
+        <div class="ptitle">Accountability Changes Behavior</div>
+        <div class="pbody">External accountability — a coach, a partner, a daily check-in — dramatically increases follow-through. Commit publicly to your numbers.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">5</div>
+      <div>
+        <div class="ptitle">Delegate Everything Else</div>
+        <div class="pbody">Build a team. Every hour you spend on paperwork, transaction coordination, or admin is an hour stolen from listings, buyers, and referrals.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">6</div>
+      <div>
+        <div class="ptitle">Measure Leading Indicators</div>
+        <div class="pbody">Track dials made, appointments set, and listings taken — not just closings. Activity metrics predict future results. You can't manage what you don't measure.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">7</div>
+      <div>
+        <div class="ptitle">Trust Outlasts Every Transaction</div>
+        <div class="pbody">Post-close follow-up, anniversary calls, handwritten notes, and pop-bys generate more referrals than any ad. Be their agent for life — not just for one sale.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">8</div>
+      <div>
+        <div class="ptitle">Work-Life Balance Is a System</div>
+        <div class="pbody">A hard stop at 5 PM and intentional weekends are non-negotiable. Burnout kills long-term production. Sustainable output requires sustainable habits.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">9</div>
+      <div>
+        <div class="ptitle">Speed to Lead Wins</div>
+        <div class="pbody">New leads must be contacted within 5 minutes. Industry data shows you are dramatically more likely to convert a lead contacted immediately versus waiting even 30 minutes. Every minute of delay costs you money.</div>
+      </div>
+    </div>
+    <div class="principle no-break">
+      <div class="num">10</div>
+      <div>
+        <div class="ptitle">Master Communication, Not Just Scripts</div>
+        <div class="pbody">Scripts are starting points, not crutches. True mastery means internalizing tactical empathy — mirroring, labeling emotions, and asking questions that make clients feel deeply understood. The agent who listens best wins the listing.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 2 — WEEKLY OVERVIEW TABLE
+══════════════════════════════════════════════════ -->
+<div class="page page-break">
+
+  <p class="section-title">Weekly Schedule</p>
+  <h2 class="section-heading">Master Time-Block Overview</h2>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#fff9f0;border:1.5px solid #f4a261;"></div> Morning Ritual</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f0fff4;border:1.5px solid #4a8c3f;"></div> Lead Generation (PROTECTED)</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f0f8ff;border:1.5px solid #4a8c3f;"></div> Client Work</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#f5f0ff;border:1.5px solid #6c5ce7;"></div> Transactions / Operations</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#faf0ff;border:1.5px solid #6c5ce7;"></div> Planning / Development</div>
+  </div>
+
+  <div class="weekly-table-wrap no-break">
+    <table class="weekly-table">
+      <thead>
+        <tr>
+          <th class="time-col">Time</th>
+          <th class="mon-col">
+            <span class="day-label">Monday</span>
+            <span class="day-theme">Lead Generation Day</span>
+          </th>
+          <th class="tue-col">
+            <span class="day-label">Tuesday</span>
+            <span class="day-theme">Listing Appointments</span>
+          </th>
+          <th class="wed-col">
+            <span class="day-label">Wednesday</span>
+            <span class="day-theme">Buyers &amp; Transactions</span>
+          </th>
+          <th class="thu-col">
+            <span class="day-label">Thursday</span>
+            <span class="day-theme">Database &amp; Referrals</span>
+          </th>
+          <th class="fri-col">
+            <span class="day-label">Friday</span>
+            <span class="day-theme">Marketing &amp; Planning</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr class="section-label">
+          <td colspan="6">Morning Ritual &amp; Daily Preparation</td>
+        </tr>
+
+        <tr class="morning-ritual">
+          <td class="time-cell">6:00–7:00</td>
+          <td colspan="5">
+            <div class="cell-title">&#127775; Personal Development Block (same every day)</div>
+            <ul class="cell-items">
+              <li>Exercise / movement (20–30 min minimum) — physical performance drives mental performance</li>
+              <li>Mindset: gratitude journal, affirmations, visualization (10–15 min)</li>
+              <li>Review annual production goal and top 3 priorities for the day</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="morning-ritual">
+          <td class="time-cell">7:00–8:00</td>
+          <td>
+            <div class="cell-title">Weekly Launch</div>
+            <ul class="cell-items">
+              <li>Review full pipeline and active listings</li>
+              <li>Set weekly lead gen goals &amp; call list</li>
+              <li>Review prior week KPIs vs. targets</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Listing Presentation Prep</div>
+            <ul class="cell-items">
+              <li>Pull CMAs for today's listing appointments</li>
+              <li>Review seller's property details and motivation</li>
+              <li>Prepare pricing strategy and marketing plan</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Transaction &amp; Buyer Prep</div>
+            <ul class="cell-items">
+              <li>Full transaction file review — all active deals</li>
+              <li>Flag deadlines, contingencies due this week</li>
+              <li>Review today's buyer consultation appointments</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Database Prep</div>
+            <ul class="cell-items">
+              <li>Pull sphere of influence call queue</li>
+              <li>Pull anniversary &amp; birthday list for today</li>
+              <li>Plan pop-bys and handwritten notes for this week</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Weekly Review Prep</div>
+            <ul class="cell-items">
+              <li>Pull weekly KPI report from CRM</li>
+              <li>Review marketing calendar for next week</li>
+              <li>Set priorities for today's planning session</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="morning-ritual">
+          <td class="time-cell">8:00–9:00</td>
+          <td colspan="3">
+            <div class="cell-title">&#128101; Script Practice (20–30 min) + Email Triage — Best practice: role-play before you dial</div>
+            <ul class="cell-items" style="display:flex;gap:24px;flex-wrap:wrap;">
+              <li>Practice today's scripts out loud with a partner or recording</li>
+              <li>Review objection handling for listing presentations and buyer consultations</li>
+              <li>First (and only) email check — urgent responses only, archive everything else</li>
+            </ul>
+          </td>
+          <td colspan="2">
+            <div class="cell-title">&#128101; Database Prep + Email Triage</div>
+            <ul class="cell-items" style="display:flex;gap:24px;flex-wrap:wrap;">
+              <li>Review CRM for all outstanding follow-up tasks and milestones</li>
+              <li>Confirm pop-by stops for today — bring a meaningful, personal item</li>
+              <li>Email triage — urgent responses only</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Section Label -->
+        <tr class="section-label">
+          <td colspan="6">&#128308; Protected Lead Generation Block — 9:00–11:00 AM (NEVER schedule meetings or showings during this window)</td>
+        </tr>
+
+        <tr class="power-hour">
+          <td class="time-cell">9:00–11:00</td>
+          <td>
+            <div class="protected-block">&#128308; POWER HOUR: FSBOs &amp; Expireds</div>
+            <div class="cell-title">Cold Lead Generation</div>
+            <ul class="cell-items">
+              <li>FSBOs: call all active FSBOs in your market — offer your buyer pool and marketing data</li>
+              <li>Expired listings: empathetic approach — "lead with empathy about their experience and ask about their future plans"</li>
+              <li>Circle prospecting: call 50–100 homes around a new listing or sold property</li>
+              <li>Goal: 3–5 listing appointments set from these calls</li>
+              <li>Log every call, voicemail, and result in CRM immediately</li>
+            </ul>
+          </td>
+          <td>
+            <div class="protected-block">&#128308; POWER HOUR: SOI &amp; New Partner Outreach</div>
+            <div class="cell-title">Warm Relationship Calls</div>
+            <ul class="cell-items">
+              <li>Call 10–15 sphere of influence contacts — genuine check-in, no pitch</li>
+              <li>Ask every contact: "transition naturally to a referral ask about anyone they know considering a move"</li>
+              <li>Outreach to 2–3 new referral sources: lenders, CPAs, attorneys</li>
+              <li>LinkedIn outreach + follow-up calls to new connections</li>
+              <li>Confirm today's listing appointments</li>
+            </ul>
+          </td>
+          <td>
+            <div class="protected-block">&#128308; POWER HOUR: Past Client Calls</div>
+            <div class="cell-title">Database Warm Calls</div>
+            <ul class="cell-items">
+              <li>Call 10–15 past clients — check in on their home, life, and neighborhood</li>
+              <li>Annual home equity review: "share that the market has been moving and offer a complimentary home value analysis"</li>
+              <li>Ask for referrals: "ask if they know anyone considering a real estate move this year"</li>
+              <li>Log all updates to CRM and schedule next touch in database contact sequence</li>
+            </ul>
+          </td>
+          <td>
+            <div class="protected-block">&#128308; POWER HOUR: Sphere &amp; Pop-By Outreach</div>
+            <div class="cell-title">Referral-Generating Touches</div>
+            <ul class="cell-items">
+              <li>Execute today's planned pop-bys — bring a handwritten note + small gift</li>
+              <li>Call 5–8 sphere contacts not yet reached this month</li>
+              <li>Open house follow-up: call every visitor from last weekend within 48 hours</li>
+              <li>Send referral thank-you notes for any new introductions received this week</li>
+            </ul>
+          </td>
+          <td>
+            <div class="protected-block">&#128308; PROSPECTING: Review Requests &amp; SOI</div>
+            <div class="cell-title">Online Presence &amp; Sphere</div>
+            <ul class="cell-items">
+              <li>Call 5–8 recently closed clients to request a Google / Zillow review</li>
+              <li>Respond to all social media comments, DMs, and Google messages</li>
+              <li>Engage with referral partners' content (like, comment, share)</li>
+              <li>Post 1 piece of value content (market update, neighborhood insight)</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Section Label -->
+        <tr class="section-label">
+          <td colspan="6">Midday — Client-Facing &amp; Relationship Activities</td>
+        </tr>
+
+        <tr class="midday">
+          <td class="time-cell">11:00–12:00</td>
+          <td>
+            <div class="cell-title">Follow-Up &amp; Scheduling</div>
+            <ul class="cell-items">
+              <li>Follow up on voicemails from morning</li>
+              <li>Schedule listing appointments for the week</li>
+              <li>Send "just listed / just sold" postcards to the neighborhood</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Listing Appointment Prep</div>
+            <ul class="cell-items">
+              <li>Final review of CMA and pricing recommendation</li>
+              <li>Prepare marketing plan and staging checklist</li>
+              <li>Review seller motivations and potential objections</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Transaction Coordination</div>
+            <ul class="cell-items">
+              <li>Status calls to all parties on active deals</li>
+              <li>Follow up on pending inspection responses</li>
+              <li>Coordinate lender, title, and escrow on open files</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Referral Thank-You Block</div>
+            <ul class="cell-items">
+              <li>Write handwritten personal notes (Buffini model — 5+ per week)</li>
+              <li>Update referral source tracking in CRM</li>
+              <li>Post closing celebration on social (with permission)</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Marketing Batch Work</div>
+            <ul class="cell-items">
+              <li>Batch-write social content for next week</li>
+              <li>Record 1–2 short videos (market tip, neighborhood tour, just closed)</li>
+              <li>Schedule posts via social media tool</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="midday">
+          <td class="time-cell">12:00–1:00</td>
+          <td>
+            <div class="cell-title">&#129309; Referral Partner Lunch</div>
+            <ul class="cell-items">
+              <li>Lunch with 1 preferred lender, title rep, or referral source</li>
+              <li>Agenda: their business goals, how you can send them referrals first</li>
+              <li>Bring a market update or buyer/seller guide as a value leave-behind</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">&#127829; Light Lunch / Listing Focus</div>
+            <ul class="cell-items">
+              <li>Protected preparation time — final review before listing appointments</li>
+              <li>Quick mental reset before afternoon client meetings</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">&#129309; Team Lunch / Development</div>
+            <ul class="cell-items">
+              <li>Team or TC check-in on all active transactions</li>
+              <li>Review team goals and celebrate wins</li>
+              <li>Process improvement discussion</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">&#129309; Referral Partner Networking</div>
+            <ul class="cell-items">
+              <li>Lunch with a lender, CPA, attorney, or new referral source</li>
+              <li>Agenda: how do we help each other's clients — referral exchange</li>
+              <li>Bring business cards and a value leave-behind</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">&#127829; Lunch (Personal)</div>
+            <ul class="cell-items">
+              <li>Step away fully — no phones, no email</li>
+              <li>Recharge for afternoon planning session</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Section Label -->
+        <tr class="section-label">
+          <td colspan="6">Afternoon — Appointments, Transaction Management &amp; Operations</td>
+        </tr>
+
+        <tr class="afternoon">
+          <td class="time-cell">1:00–3:00</td>
+          <td>
+            <div class="cell-title">Open Houses &amp; Market Activity</div>
+            <ul class="cell-items">
+              <li>Preview new listings in your farm area</li>
+              <li>Visit open houses — meet buyers and other agents</li>
+              <li>Deliver marketing materials to seller clients</li>
+              <li>Attend team office meeting if scheduled</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Listing Appointments (2–3 minimum)</div>
+            <ul class="cell-items">
+              <li>Present your CMA — let data lead the conversation</li>
+              <li>Present your marketing plan (photography, online exposure, open house)</li>
+              <li>Use your Listing Presentation framework: build trust before asking to sign</li>
+              <li>Handle objections using tactical empathy: mirror their words, label their emotions, and ask questions that uncover their real concern</li>
+              <li>End every meeting: "close with a referral ask about anyone else considering a move"</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Buyer Consultations &amp; Showings</div>
+            <ul class="cell-items">
+              <li>Structured buyer consultations — discovery first, not just touring homes</li>
+              <li>Property showings for active buyer clients</li>
+              <li>Present offers and negotiate on behalf of buyers</li>
+              <li>Coordinate with preferred lenders on pre-approval updates</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Open House Follow-Up &amp; Consultations</div>
+            <ul class="cell-items">
+              <li>Follow up with all open house visitors from the prior weekend</li>
+              <li>New buyer consultations from this week's referrals</li>
+              <li>Home equity consultations with database clients (free CMA offer)</li>
+              <li>Expired listing follow-up — second attempt on unanswered calls</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">&#128218; Professional Development (2 hrs)</div>
+            <ul class="cell-items">
+              <li>Listen to a real estate coaching podcast (Tom Ferry, Brian Buffini, etc.)</li>
+              <li>Complete 1 training module from your coaching program</li>
+              <li>Script practice — role-play listing presentations and buyer consultations</li>
+              <li>Study market data, neighborhood trends, and competitor listings</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="afternoon">
+          <td class="time-cell">3:00–4:30</td>
+          <td>
+            <div class="cell-title">CRM &amp; Follow-Up Catch-Up</div>
+            <ul class="cell-items">
+              <li>Update all morning call notes in CRM</li>
+              <li>Schedule callbacks for no-answers and voicemails</li>
+              <li>Send follow-up emails or texts to FSBO and expired contacts</li>
+              <li>Review email inbox — second pass of the day</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">New Listing Onboarding</div>
+            <ul class="cell-items">
+              <li>Schedule photography, staging, and MLS entry for new listings won today</li>
+              <li>Order sign, lockbox, and directional signs</li>
+              <li>Send seller welcome email with timeline and next steps</li>
+              <li>Upload listing to MLS and all syndication platforms</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Transaction File Catch-Up</div>
+            <ul class="cell-items">
+              <li>Update all active transaction files with today's activity</li>
+              <li>Send proactive status update to all parties (before they ask)</li>
+              <li>Confirm closing dates and coordinate final walkthroughs</li>
+              <li>Flag any at-risk contingencies for immediate attention</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Pipeline &amp; File Updates</div>
+            <ul class="cell-items">
+              <li>Update all transaction files and CRM</li>
+              <li>Confirm closing dates and settlement statements</li>
+              <li>Proactive client status calls on active transactions</li>
+              <li>Celebrate any closings with a personal call or note</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Next Week Calendar Block</div>
+            <ul class="cell-items">
+              <li>Block all 5 lead gen windows for next week — immovable</li>
+              <li>Schedule listing appointments for Monday and Tuesday afternoons</li>
+              <li>Block buyer consultations for Wednesday afternoon</li>
+              <li>Review commitments and expected closings next week</li>
+            </ul>
+          </td>
+        </tr>
+
+        <!-- Section Label -->
+        <tr class="section-label">
+          <td colspan="6">End of Day — Gratitude, Preparation &amp; Shutdown</td>
+        </tr>
+
+        <tr class="eod">
+          <td class="time-cell">4:30–5:00</td>
+          <td>
+            <div class="cell-title">EOD Wrap &amp; Weekly Goal Check</div>
+            <ul class="cell-items">
+              <li>Log daily KPIs (dials, contacts, appts set, referrals)</li>
+              <li>Write 2–3 handwritten thank-you notes or texts</li>
+              <li>Set top 3 priorities for tomorrow</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">EOD Wrap &amp; Gratitude</div>
+            <ul class="cell-items">
+              <li>Log daily KPIs — listing appts held, contracts presented</li>
+              <li>Thank-you texts to any referral source who sent a lead today</li>
+              <li>Set tomorrow's buyer consultation prep reminders</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">EOD Wrap &amp; Team Check-In</div>
+            <ul class="cell-items">
+              <li>Final team check-in on urgent transaction items</li>
+              <li>Log KPIs and update pipeline board / spreadsheet</li>
+              <li>Send closing congratulations to clients and co-op agents</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">EOD Wrap &amp; Celebrations</div>
+            <ul class="cell-items">
+              <li>Celebrate any closings with a personal call</li>
+              <li>Post closing photos on social (with client permission)</li>
+              <li>Log KPIs and note wins for the week</li>
+            </ul>
+          </td>
+          <td>
+            <div class="cell-title">Weekly Review &amp; Business Plan Check</div>
+            <ul class="cell-items">
+              <li>Review full week's KPIs vs. targets</li>
+              <li>Identify what worked and what to adjust next week</li>
+              <li>Update annual goal tracker — are you on pace?</li>
+              <li>Celebrate wins with your team. Then log off.</li>
+            </ul>
+          </td>
+        </tr>
+
+        <tr class="hardstop">
+          <td colspan="6">&#9201; 5:00 PM — HARD STOP &bull; Protect your personal time. Sustainable production requires intentional rest. The business will be there tomorrow.</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div><!-- /weekly-table-wrap -->
+
+</div><!-- /page -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 3 — DAILY DETAIL CARDS
+══════════════════════════════════════════════════ -->
+<div class="page page-break">
+
+  <p class="section-title">Day-by-Day Deep Dive</p>
+  <h2 class="section-heading">Detailed Daily Playbooks</h2>
+
+  <div class="day-detail-grid">
+
+    <!-- MONDAY -->
+    <div class="day-detail-card no-break">
+      <div class="ddc-header mon">
+        <div class="dday">Monday &mdash; Lead Generation Day</div>
+        <div class="dtheme">Your #1 job today: make prospecting calls to FSBOs, expireds, and your sphere</div>
+        <div class="dfocus">Daily discipline in prospecting is the foundation of every top-producing career.</div>
+      </div>
+      <div class="ddc-body">
+        <div class="time-block-row">
+          <div class="tbr-time">6:00–8:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Morning Ritual + Weekly Launch</div>
+            <ul class="tbr-list">
+              <li>Exercise, gratitude journal, review annual goals and this week's targets</li>
+              <li>Pull FSBO and expired listing call list from MLS / REDX / Vulcan7</li>
+              <li>Pull SOI call queue from CRM — who hasn't heard from you in 30+ days?</li>
+              <li>Set your weekly lead gen number goal (e.g., 5 listing appointments this week)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">8:00–9:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Script Practice + Email Triage</div>
+            <ul class="tbr-list">
+              <li>20–30 min script role-play: FSBO script, expired script, SOI referral ask</li>
+              <li>Record yourself once per week — watch for filler words and pace</li>
+              <li>One email pass — urgent responses only. Do NOT dive into your inbox.</li>
+            </ul>
+            <div class="tbr-note">Protect your energy and mindset for prospecting. Email is reactive — calls are proactive.</div>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">9:00–11:00</div>
+          <div class="tbr-content">
+            <div class="protected-block">&#128308; PROTECTED PROSPECTING WINDOW</div>
+            <div class="tbr-title">FSBOs / Expireds / Circle Prospecting</div>
+            <ul class="tbr-list">
+              <li>FSBOs: empathetic introduction — "offer your buyer pool as a value proposition and lead with how you can help"</li>
+              <li>Expired listings: "lead with empathy about their listing experience, then ask about their plans and timeline for re-listing"</li>
+              <li>Circle prospecting: call 50–100 homes around a new listing — "reference your local activity and buyer interest in their area"</li>
+              <li>Goal: 3–5 listing appointment conversations minimum</li>
+              <li>Log every call and outcome in CRM immediately after dialing</li>
+            </ul>
+            <div class="tbr-note">No interruptions. Voicemail is a win — leave a compelling, benefit-focused message.</div>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">11:00–12:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Follow-Up + Scheduling</div>
+            <ul class="tbr-list">
+              <li>Follow up on all voicemails left during power hour</li>
+              <li>Confirm listing appointments for later this week</li>
+              <li>Send a personalized market update email to your FSBO and expired call list</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">12:00–1:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Referral Partner Lunch</div>
+            <ul class="tbr-list">
+              <li>Lunch with 1 preferred lender, title rep, or referral source</li>
+              <li>"discuss how you can mutually refer clients and build a referral partnership"</li>
+              <li>Ask: "ask if any of their current clients might benefit from working with a great agent"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">1:00–3:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Open Houses / Market Preview</div>
+            <ul class="tbr-list">
+              <li>Preview new listings in your farm areas — know your inventory</li>
+              <li>Visit open houses — connect with other agents and unrepresented buyers</li>
+              <li>Deliver any "just listed" or "just sold" cards to neighboring homes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">3:00–5:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">CRM + EOD Wrap</div>
+            <ul class="tbr-list">
+              <li>Update all call notes and results in CRM</li>
+              <li>Log weekly KPI starting point — dials, conversations, appointments set</li>
+              <li>Write thank-you notes to any referral source who sent a lead</li>
+              <li>Set top 3 priorities for Tuesday's listing appointments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUESDAY -->
+    <div class="day-detail-card no-break">
+      <div class="ddc-header tue">
+        <div class="dday">Tuesday &mdash; Listing Appointment Day</div>
+        <div class="dtheme">Win listings. Every listing is a billboard, a buyer lead magnet, and a leverage point.</div>
+        <div class="dfocus">Every listing is a billboard, a buyer lead magnet, and your highest-leverage opportunity.</div>
+      </div>
+      <div class="ddc-body">
+        <div class="time-block-row">
+          <div class="tbr-time">6:00–9:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Morning Ritual + Listing Prep</div>
+            <ul class="tbr-list">
+              <li>Deep-dive on each seller's property: recent comps, active competition, days on market trends</li>
+              <li>Prepare your CMA — let the data tell the pricing story</li>
+              <li>Review each seller's motivation: are they relocating, downsizing, divorce, estate? Tailor your approach.</li>
+              <li>Confirm all listing appointments — call to confirm the day before</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">9:00–11:00</div>
+          <div class="tbr-content">
+            <div class="protected-block">&#128308; PROTECTED PROSPECTING WINDOW</div>
+            <div class="tbr-title">SOI Calls + New Referral Source Outreach</div>
+            <ul class="tbr-list">
+              <li>Call 10–15 sphere of influence contacts — no pitch, genuine connection</li>
+              <li>Always close with: "ask if they know anyone considering a move"</li>
+              <li>Outreach to 2–3 new referral partners (CPAs, attorneys, financial advisors)</li>
+              <li>LinkedIn connections + personal note to new contacts met this week</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">11:00–12:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Final Listing Prep</div>
+            <ul class="tbr-list">
+              <li>Print or prepare digital presentation materials</li>
+              <li>Review your marketing plan slide: photography, video, MLS, social ads, open house</li>
+              <li>Pre-qualify every appointment: determine if you're the prospect's preferred choice or just being used for a free analysis. Prepare for the top 3 objections using structured response frameworks (acknowledge, restate, inquire deeper)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">1:00–4:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Listing Appointments (2–3 minimum)</div>
+            <ul class="tbr-list">
+              <li>Lead with curiosity: "Tell me about your plans — what does the ideal outcome look like for you?"</li>
+              <li>Present CMA — educate on the market before recommending a price</li>
+              <li>Walk through your marketing plan in detail — show how you're different</li>
+              <li>Ask for the listing agreement — then stop talking and listen</li>
+              <li>End every meeting: "close by asking if they know anyone else considering a move"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">4:00–5:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">New Listing Onboarding + EOD</div>
+            <ul class="tbr-list">
+              <li>Schedule photography, staging walkthrough, and MLS entry for any listings signed today</li>
+              <li>Send seller welcome email with timeline and what to expect</li>
+              <li>Log KPIs — listing appts held, listing agreements signed</li>
+              <li>Set top 3 priorities for Wednesday</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WEDNESDAY -->
+    <div class="day-detail-card no-break">
+      <div class="ddc-header wed">
+        <div class="dday">Wednesday &mdash; Buyers &amp; Transactions Day</div>
+        <div class="dtheme">Keep every transaction on track. Convert buyers into contracts.</div>
+        <div class="dfocus">Success in real estate is earned daily through consistent, proactive client communication.</div>
+      </div>
+      <div class="ddc-body">
+        <div class="time-block-row">
+          <div class="tbr-time">9:00–11:00</div>
+          <div class="tbr-content">
+            <div class="protected-block">&#128308; PROTECTED PROSPECTING WINDOW</div>
+            <div class="tbr-title">Past Client Database Calls</div>
+            <ul class="tbr-list">
+              <li>Call 10–15 past clients — no pitch, just a genuine check-in on their home and life</li>
+              <li>Annual home equity review: "share that local market conditions have shifted and offer a complimentary home value update"</li>
+              <li>Referral ask: "ask if they know anyone considering a move"</li>
+              <li>Re-engage anyone who hasn't heard from you in 90+ days — they are your highest-value calls</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">11:00–3:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Transaction Management Block</div>
+            <ul class="tbr-list">
+              <li>Status call to every client on an active transaction: "I'm calling to keep you informed — here's where we are"</li>
+              <li>Coordinate with co-op agents, lenders, title, and inspectors on all open files</li>
+              <li>Review contingency deadlines — flag any at risk of missing</li>
+              <li>Pre-closing preparation: final walkthrough coordination, HUD/settlement review</li>
+              <li>Buyer consultations: scheduled new buyer consultations from this week's referrals</li>
+              <li>Property showings: walk active buyer clients through homes matching their criteria</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">3:00–5:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Marketing + CRM Maintenance</div>
+            <ul class="tbr-list">
+              <li>Send monthly market update email to full database (Buffini model)</li>
+              <li>Add new contacts from this week's networking to CRM</li>
+              <li>Update database contact sequence for all new contacts added this month</li>
+              <li>Log KPIs, write thank-you notes, set Thursday priorities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THURSDAY -->
+    <div class="day-detail-card no-break">
+      <div class="ddc-header thu">
+        <div class="dday">Thursday &mdash; Database &amp; Referral Day</div>
+        <div class="dtheme">Pop-bys, personal notes, and genuine touches that generate more business than any ad.</div>
+        <div class="dfocus">Every client served well becomes a referral source that generates business for years.</div>
+      </div>
+      <div class="ddc-body">
+        <div class="time-block-row">
+          <div class="tbr-time">9:00–11:00</div>
+          <div class="tbr-content">
+            <div class="protected-block">&#128308; PROTECTED PROSPECTING WINDOW</div>
+            <div class="tbr-title">Sphere &amp; Pop-By Outreach (Buffini Model)</div>
+            <ul class="tbr-list">
+              <li>Execute this week's planned pop-bys — bring a meaningful, personal item (coffee, seasonal gift, plant)</li>
+              <li>Call every open house visitor from last weekend — follow up while the memory is fresh</li>
+              <li>Call 5–8 sphere contacts who are due for their monthly touch in the database contact sequence</li>
+              <li>Send referral thank-you notes or gifts within 24 hours of any new introduction</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">11:00–1:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Handwritten Notes + Sphere Gratitude Block</div>
+            <ul class="tbr-list">
+              <li>Write 5–10 personal, handwritten notecards (not mass mailers — personal notes)</li>
+              <li>Milestone touches: anniversary of their purchase, birthdays, new jobs, babies</li>
+              <li>Personal texts to celebrate: "Happy 1-year homeowner anniversary! Hope you love it as much as ever."</li>
+              <li>Post a closing photo or client testimonial on social media (with permission)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">12:00–1:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Networking Lunch</div>
+            <ul class="tbr-list">
+              <li>Lunch with a preferred lender, title company rep, CPA, or estate attorney</li>
+              <li>Discuss how to co-host a client appreciation event or first-time buyer seminar</li>
+              <li>Ask: "ask if any of their current clients could benefit from an agent recommendation"</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">1:00–3:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Open House Follow-Up &amp; Consultations</div>
+            <ul class="tbr-list">
+              <li>Follow up on all open house visitors from the prior weekend — 48-hour window</li>
+              <li>New buyer consultations from this week's sphere referrals</li>
+              <li>Free CMA follow-up for any database clients who expressed interest</li>
+              <li>Expired listing second attempt — re-engage anyone who didn't answer Monday</li>
+            </ul>
+          </div>
+        </div>
+        <div class="time-block-row">
+          <div class="tbr-time">3:00–5:00</div>
+          <div class="tbr-content">
+            <div class="tbr-title">Pipeline Updates + EOD</div>
+            <ul class="tbr-list">
+              <li>Final transaction file updates and proactive client status messages</li>
+              <li>Confirm closing dates, coordinate final walkthroughs for next-week closings</li>
+              <li>Log daily KPIs — pop-bys, notes sent, referrals asked, referrals received</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day-detail-card friday no-break">
+      <div class="ddc-header fri">
+        <div class="dday">Friday &mdash; Marketing, Planning &amp; Professional Development Day</div>
+        <div class="dtheme">Sharpen the axe. Plan next week. Grow your brand. Finish strong and protect your weekend.</div>
+        <div class="dfocus">What gets planned gets done. What doesn't gets forgotten. Plan your week before it plans you.</div>
+      </div>
+      <div class="ddc-body" style="display:grid;grid-template-columns:1fr 1fr;gap:0 24px;">
+        <div>
+          <div class="time-block-row">
+            <div class="tbr-time">9:00–10:00</div>
+            <div class="tbr-content">
+              <div class="protected-block">&#128308; PROSPECTING: Reviews &amp; Sphere</div>
+              <div class="tbr-title">Online Presence &amp; Review Requests</div>
+              <ul class="tbr-list">
+                <li>Call 5–8 recently closed clients — request a Google / Zillow review personally</li>
+                <li>Respond to all social media comments, DMs, and Google Business messages</li>
+                <li>Engage authentically with referral partners' content</li>
+              </ul>
+            </div>
+          </div>
+          <div class="time-block-row">
+            <div class="tbr-time">10:00–12:00</div>
+            <div class="tbr-content">
+              <div class="tbr-title">Marketing Batch Work</div>
+              <ul class="tbr-list">
+                <li>Record 1–2 short videos (market update, neighborhood tour, client success story)</li>
+                <li>Write and schedule 5 social media posts for next week in one batch</li>
+                <li>Draft next month's client newsletter or email campaign</li>
+                <li>Update Google Business Profile with new content or photos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="time-block-row">
+            <div class="tbr-time">1:00–3:00</div>
+            <div class="tbr-content">
+              <div class="tbr-title">&#128218; Professional Development (2 full hours)</div>
+              <ul class="tbr-list">
+                <li>Listen to a real estate coaching podcast (Tom Ferry Podcast, The Brian Buffini Show)</li>
+                <li>Complete 1 training module from your coaching program</li>
+                <li>Script practice — role-play listing presentations and buyer consultations aloud</li>
+                <li>Read 20–30 pages of The Millionaire Real Estate Agent or The ONE Thing</li>
+                <li>Study market trends, new neighborhoods, and competitor listing activity</li>
+              </ul>
+            </div>
+          </div>
+          <div class="time-block-row">
+            <div class="tbr-time">3:00–5:00</div>
+            <div class="tbr-content">
+              <div class="tbr-title">Weekly Review + Next Week Setup</div>
+              <ul class="tbr-list">
+                <li>Pull full week KPIs — compare to weekly targets</li>
+                <li>Update annual goal tracker: are you on pace?</li>
+                <li>Block all 5 lead gen windows for next week — non-negotiable</li>
+                <li>Schedule listing appointments and buyer consultations for next week</li>
+                <li>Plan next week's pop-bys and handwritten note recipients</li>
+                <li>Celebrate the week's wins with your team. Then log off.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /day-detail-grid -->
+
+</div><!-- /page -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 4 — MORNING RITUAL + PARTNER SYSTEM + KPI
+══════════════════════════════════════════════════ -->
+<div class="page page-break">
+
+  <!-- MORNING RITUAL -->
+  <div class="ritual-section">
+    <p class="section-title">Non-Negotiable Foundation</p>
+    <h2 class="section-heading">The Daily Morning Ritual (5:30–8:00 AM)</h2>
+    <div class="ritual-steps">
+      <div class="ritual-step">
+        <div class="rstep-num">Step 1 &bull; 5:30 AM</div>
+        <div class="rstep-title">Move Your Body</div>
+        <div class="rstep-time">20–30 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Start by waking at the same time every day. Hydrate immediately (16-20 oz water). No phone, no email, no news. Then move your body — physical exercise raises the exact chemistry needed for confident prospecting.</p>
+      </div>
+      <div class="ritual-step">
+        <div class="rstep-num">Step 2 &bull; 6:30 AM</div>
+        <div class="rstep-title">Gratitude &amp; Mindset</div>
+        <div class="rstep-time">10–15 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Begin with 10-15 minutes of silence, meditation, or prayer. Then write 10 things you're grateful for. Speak affirmations focused on your identity as a top producer and your specific targets. Visualize your ideal day as already achieved. This block is the foundation of sustainable success.</p>
+      </div>
+      <div class="ritual-step">
+        <div class="rstep-num">Step 3 &bull; 6:45 AM</div>
+        <div class="rstep-title">Review Goals</div>
+        <div class="rstep-time">5–10 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Read your annual production goal, monthly target, and the week's top 3 priorities out loud. Connect each day's activity to your long-term vision. Connect each day's activity to your long-term vision.</p>
+      </div>
+      <div class="ritual-step">
+        <div class="rstep-num">Step 4 &bull; 7:00 AM</div>
+        <div class="rstep-title">CRM Review</div>
+        <div class="rstep-time">20–30 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Review outstanding tasks, upcoming client milestones (anniversaries, birthdays), and today's pipeline notes. Know exactly who to call and why before you dial a single number.</p>
+      </div>
+      <div class="ritual-step">
+        <div class="rstep-num">Step 5 &bull; 7:30 AM</div>
+        <div class="rstep-title">Script Practice</div>
+        <div class="rstep-time">20–30 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Non-negotiable: role-play your scripts before you dial. Practice your FSBO script, expired script, SOI referral ask, and listing presentation opener. Confidence on the phone comes from preparation — not personality.</p>
+      </div>
+      <div class="ritual-step">
+        <div class="rstep-num">Step 6 &bull; 8:30 AM</div>
+        <div class="rstep-title">Call List Ready</div>
+        <div class="rstep-time">15 minutes</div>
+        <p style="font-size:12px;margin-top:6px;opacity:0.7;">Your FSBO/expired list, SOI call queue, and past client follow-up list are pulled and ordered by priority before 9 AM. Preparation is confidence. Preparation is confidence. What's scheduled gets done.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERRAL PARTNER SYSTEM -->
+  <div class="partner-section">
+    <p class="section-title">The Engine of Your Business</p>
+    <h2 class="section-heading">Referral Partner Tiering System</h2>
+    <div class="partner-grid">
+      <div class="partner-card no-break">
+        <div class="partner-card-title">
+          <span style="font-size:18px;">&#11088;</span> A-Tier Partners (Top 10)
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#e63946;"></div>
+          <div><strong>Who they are:</strong> Preferred lenders, title reps, estate attorneys, top divorce attorneys</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#e63946;"></div>
+          <div><strong>Contact frequency:</strong> Every 2–4 weeks (bi-weekly strategy call or lunch)</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#e63946;"></div>
+          <div><strong>Topics:</strong> Shared client pipeline, co-marketing, their business goals</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#e63946;"></div>
+          <div><strong>Goal:</strong> Become their exclusive agent referral — they should think of you first</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#e63946;"></div>
+          <div><strong>Value-add:</strong> Market data, co-host first-time buyer seminars, co-branded client events</div>
+        </div>
+      </div>
+      <div class="partner-card no-break">
+        <div class="partner-card-title">
+          <span style="font-size:18px;">&#128994;</span> B-Tier Partners (15–25 partners)
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#2a9d8f;"></div>
+          <div><strong>Who they are:</strong> CPAs, financial advisors, home inspectors, contractors, insurance agents</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#2a9d8f;"></div>
+          <div><strong>Contact frequency:</strong> Monthly (once per month)</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#2a9d8f;"></div>
+          <div><strong>Topics:</strong> Market updates, referral exchange, shared client updates</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#2a9d8f;"></div>
+          <div><strong>Goal:</strong> Elevate to A-tier; stay top-of-mind for their client referrals</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#2a9d8f;"></div>
+          <div><strong>Value-add:</strong> Market snapshots, send them clients first (reciprocity is the key)</div>
+        </div>
+      </div>
+      <div class="partner-card no-break">
+        <div class="partner-card-title">
+          <span style="font-size:18px;">&#128993;</span> C-Tier Partners (Growth Targets)
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#f4a261;"></div>
+          <div><strong>Who they are:</strong> Moving companies, senior care facilities, HR directors, property managers</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#f4a261;"></div>
+          <div><strong>Contact frequency:</strong> Quarterly (once per quarter)</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#f4a261;"></div>
+          <div><strong>Topics:</strong> Introduction, offer value, no ask until relationship is established</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#f4a261;"></div>
+          <div><strong>Goal:</strong> Get a meeting; begin the relationship; send them a referral first</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#f4a261;"></div>
+          <div><strong>Value-add:</strong> Personalized market insight, intro from mutual contact</div>
+        </div>
+      </div>
+      <div class="partner-card no-break">
+        <div class="partner-card-title">
+          <span style="font-size:18px;">&#128309;</span> The Database Contact System
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#6c5ce7;"></div>
+          <div><strong>Target:</strong> Database of 200+ people — contact each 33 times per year</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#6c5ce7;"></div>
+          <div><strong>Touch mix:</strong> Calls, personal notes, pop-bys, emails, events, mailers, social</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#6c5ce7;"></div>
+          <div><strong>Result:</strong> Consistent multi-channel contact across your database yields predictable transaction volume</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#6c5ce7;"></div>
+          <div><strong>Scale:</strong> A well-maintained database of 200+ people with consistent contact produces reliable annual closings</div>
+        </div>
+        <div class="partner-tier">
+          <div class="tier-dot" style="background:#6c5ce7;"></div>
+          <div><strong>Growth path:</strong> As your database grows and your touch frequency remains consistent, your referral business scales proportionally</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 5 — KPI TRACKER
+══════════════════════════════════════════════════ -->
+<div class="page page-break">
+
+  <p class="section-title">Performance Tracking</p>
+  <h2 class="section-heading">Weekly KPI Scorecard</h2>
+  <p style="font-size:13px;opacity:0.7;margin-bottom:24px;">
+    "Track leading indicators, not just lagging results. Dials made predict listings. Listings predict closings. Monitor the inputs." — Tom Ferry
+  </p>
+
+  <div class="kpi-grid no-break">
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#128222; Prospecting Activity</div>
+      <div class="kpi-item"><span class="kpi-label">Total outbound dials made</span><span class="kpi-target">100–150/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Live conversations (connected)</span><span class="kpi-target">20–30/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">FSBOs / Expireds contacted</span><span class="kpi-target">10–20/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Circle prospecting calls</span><span class="kpi-target">50+/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Past client database calls</span><span class="kpi-target">10–15/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Pop-bys completed (Buffini)</span><span class="kpi-target">1–3/wk</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#128203; Production Pipeline</div>
+      <div class="kpi-item"><span class="kpi-label">Listing appointments set</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Listing appointments held</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Listings taken (signed agreements)</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Buyer consultations held</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Offers written / contracts</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">MTD closings vs. monthly target</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#127775; Relationship Building</div>
+      <div class="kpi-item"><span class="kpi-label">Handwritten notes sent (Buffini)</span><span class="kpi-target">5+/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Referrals received (inbound)</span><span class="kpi-target">Track all</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Post-close follow-up calls made</span><span class="kpi-target">All closings</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">5-star reviews requested</span><span class="kpi-target">All closings</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Milestone touches (anniversaries, etc.)</span><span class="kpi-target">All</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Open house visitors followed up</span><span class="kpi-target">All / 48 hrs</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#128247; Marketing &amp; Brand</div>
+      <div class="kpi-item"><span class="kpi-label">Social media posts published</span><span class="kpi-target">5/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Video content pieces created</span><span class="kpi-target">1–2/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Client email/newsletter sent</span><span class="kpi-target">1/mo</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Database contacts added / updated</span><span class="kpi-target">5+/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">New Google / Zillow reviews received</span><span class="kpi-target">Track all</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Open houses hosted</span><span class="kpi-target">1–2/mo</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#127941; Financial Targets (Monthly)</div>
+      <div class="kpi-item"><span class="kpi-label">Listings taken (units)</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Total closings (both sides)</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Target GCI (gross comm. income)</span><span class="kpi-target">Goal: ___</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">20% savings contribution (CORE)</span><span class="kpi-target">Auto</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Appt-to-listing conversion %</span><span class="kpi-target">Target 75%+</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">List price to sales price ratio</span><span class="kpi-target">Target 98%+</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#128218; Growth &amp; Development</div>
+      <div class="kpi-item"><span class="kpi-label">Training modules completed</span><span class="kpi-target">1/wk</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Books / podcasts consumed</span><span class="kpi-target">1 active</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Script practice sessions</span><span class="kpi-target">Daily</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Coaching calls attended</span><span class="kpi-target">All</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Accountability partner check-in</span><span class="kpi-target">Daily</span><div class="kpi-box"></div></div>
+      <div class="kpi-item"><span class="kpi-label">Personal health (exercise days)</span><span class="kpi-target">5/wk</span><div class="kpi-box"></div></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-card-title">&#128202; Conversion Ratios</div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tr><th style="width:60%;text-align:left;padding:6px 0;border-bottom:1px solid #f0f2f5;">Conversion Point</th><th style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">Your %</th></tr>
+        <tr><td style="padding:6px 0;border-bottom:1px solid #f0f2f5;">Contacts to Appointments</td><td style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">___%</td></tr>
+        <tr><td style="padding:6px 0;border-bottom:1px solid #f0f2f5;">Appointments to Listings Taken</td><td style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">___%</td></tr>
+        <tr><td style="padding:6px 0;border-bottom:1px solid #f0f2f5;">Listings Taken to Sold</td><td style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">___%</td></tr>
+        <tr><td style="padding:6px 0;border-bottom:1px solid #f0f2f5;">Buyer Consults to Agreements</td><td style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">___%</td></tr>
+        <tr><td style="padding:6px 0;border-bottom:1px solid #f0f2f5;">Speed to Lead (avg response time)</td><td style="text-align:center;padding:6px 0;border-bottom:1px solid #f0f2f5;">___ min</td></tr>
+        <tr><td style="padding:6px 0;">% Business from Repeat/Referral</td><td style="text-align:center;padding:6px 0;">___%</td></tr>
+      </table>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+
+    <div class="page" style="page-break-before: always;">
+      <p class="section-title">Goal Planning</p>
+      <h2 class="section-heading">Goal Reverse-Engineering Formula</h2>
+      <p style="margin-bottom: 16px; font-size: 13px; color: #555;">Use this calculator to connect your annual income goal to your exact daily contact target. This is the single most universal framework across all leading coaching platforms.</p>
+      <div style="background: #f8f9fa; border: 2px solid #4a8c3f; border-radius: 8px; padding: 24px; font-family: 'Courier New', monospace; font-size: 13px; line-height: 2.2; margin-bottom: 20px;">
+        <div>STEP 1: Annual GCI Goal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $____________</div>
+        <div>STEP 2: Avg Commission Per Transaction &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $____________</div>
+        <div>STEP 3: Transactions Needed (Step 1 &divide; Step 2) &nbsp; ____________</div>
+        <div>STEP 4: Your Close Rate (listings to sold) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________%</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Listings Needed (Step 3 &divide; Step 4) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________</div>
+        <div>STEP 5: Your Appt-to-Listing Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________%</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Appointments Needed (&divide; Step 5) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________</div>
+        <div>STEP 6: Your Contact-to-Appointment Rate &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________%</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total Contacts Needed (&divide; Step 6) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ____________</div>
+        <div>STEP 7: Working Days Per Year &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 250</div>
+        <div style="font-weight: bold; color: #1a2e1a;">STEP 8: YOUR DAILY CONTACT TARGET (&divide; 250) &nbsp;&nbsp; ____________</div>
+      </div>
+      <div style="background: #eaf2e6; border-radius: 8px; padding: 16px 20px; font-size: 12px; line-height: 1.6;">
+        <strong>Worked Example ($250,000 GCI target):</strong><br/>
+        $250,000 &divide; $7,000 avg commission = 36 transactions needed<br/>
+        36 &divide; 75% close rate = 48 listings needed<br/>
+        48 &divide; 70% appt-to-listing rate = 69 appointments needed<br/>
+        69 &divide; 5% contact-to-appt rate = 1,380 contacts/year<br/>
+        1,380 &divide; 250 working days = <strong>~6 quality contacts per day (minimum)</strong><br/><br/>
+        <em>Note: The 5% rate assumes warm/SOI contacts. Cold calling conversion is typically 1-3%. Most coaches recommend 20-25 daily contacts to account for mixed lead quality and build pipeline momentum.</em>
+      </div>
+    </div>
+
+
+<!-- ═══════════════════════════════════════════════
+     PAGE 6 — MINDSET + QUOTES + TOOLS
+══════════════════════════════════════════════════ -->
+<div class="page page-break">
+
+  <div class="mindset-section">
+    <p class="section-title">Mindset &amp; Philosophy</p>
+    <h2 class="section-heading">Words to Live and Work By</h2>
+    <div class="quotes-grid">
+      <div class="quote-card no-break">
+        <div class="quote-text">"Success in real estate is a choice made daily. Your morning routine, your prospecting discipline, and your commitment to growth determine your trajectory — not your past."</div>
+        <div class="quote-source">Tom Ferry &bull; Tom Ferry Coaching</div>
+      </div>
+      <div class="quote-card no-break">
+        <div class="quote-text">"A referral-based business is the most sustainable model in real estate. Every client served exceptionally becomes a source of future business. Relationships outlast any marketing campaign."</div>
+        <div class="quote-source">Brian Buffini &bull; Buffini &amp; Company</div>
+      </div>
+      <div class="quote-card no-break">
+        <div class="quote-text">"The gap between top producers and average agents is daily discipline. The fundamentals — prospecting, scripts, tracking — are simple but not easy. Commit to them every single day."</div>
+        <div class="quote-source">Mike Ferry &bull; Mike Ferry Organization</div>
+      </div>
+      <div class="quote-card no-break">
+        <div class="quote-text">"Lead generation powers every level of business growth. Listings create maximum leverage — market presence, buyer leads, and dual-commission potential. Focus relentlessly on the single highest-impact action each day."</div>
+        <div class="quote-source">Gary Keller &bull; The Millionaire Real Estate Agent</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANNUAL BUSINESS PLAN REMINDER -->
+  <p class="section-title">Annual Foundation</p>
+  <h2 class="section-heading">Your Business Plan Must Answer These Questions</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px;">
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4a8c3f;margin-bottom:8px;">Production Goals</div>
+      <ul style="padding-left:16px;font-size:12px;line-height:1.8;">
+        <li>How many listings will I take this year?</li>
+        <li>How many closings (both sides) is my goal?</li>
+        <li>What is my GCI target?</li>
+        <li>What % will come from sellers vs. buyers?</li>
+        <li>What % will come from referrals?</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e63946;margin-bottom:8px;">Referral Partner Goals</div>
+      <ul style="padding-left:16px;font-size:12px;line-height:1.8;">
+        <li>Who are my top 10 A-tier referral partners?</li>
+        <li>Which 5 partners do I want to elevate?</li>
+        <li>How many new professional referral sources?</li>
+        <li>What co-marketing events will I run this year?</li>
+        <li>How will I grow my systematic database contact to 500+?</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:18px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#2a9d8f;margin-bottom:8px;">Personal &amp; Financial Goals</div>
+      <ul style="padding-left:16px;font-size:12px;line-height:1.8;">
+        <li>What am I saving? (Target: 20% of GCI)</li>
+        <li>What am I giving? (Target: 3–10%)</li>
+        <li>What does my ideal work week look like?</li>
+        <li>What 3 skills will I develop this year?</li>
+        <li>What will I do with my hard stop at 5 PM?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RECOMMENDED TOOLS -->
+  <p class="section-title">Tools &amp; Resources</p>
+  <h2 class="section-heading">Technology Stack for Top-Producing Agents</h2>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+    <div style="background:white;border-radius:10px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#4a8c3f;margin-bottom:8px;">CRM</div>
+      <ul style="padding-left:14px;font-size:12px;line-height:1.8;opacity:0.75;">
+        <li>Follow Up Boss</li>
+        <li>KW Command</li>
+        <li>Top Producer</li>
+        <li>Sierra Interactive</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#e63946;margin-bottom:8px;">Video Outreach</div>
+      <ul style="padding-left:14px;font-size:12px;line-height:1.8;opacity:0.75;">
+        <li>BombBomb</li>
+        <li>Loom</li>
+        <li>Vidyard</li>
+        <li>iPhone (face-to-face)</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#2a9d8f;margin-bottom:8px;">Lead Generation</div>
+      <ul style="padding-left:14px;font-size:12px;line-height:1.8;opacity:0.75;">
+        <li>REDX / Vulcan7 (FSBOs/Expireds)</li>
+        <li>Canva (marketing materials)</li>
+        <li>Mailchimp / Constant Contact</li>
+        <li>Google Business Profile</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6c5ce7;margin-bottom:8px;">Coaching Platforms</div>
+      <ul style="padding-left:14px;font-size:12px;line-height:1.8;opacity:0.75;">
+        <li>Tom Ferry Coaching</li>
+        <li>Mike Ferry Organization</li>
+        <li>Buffini &amp; Company</li>
+        <li>KW MAPS Coaching</li>
+        <li>Icenhower Coaching (ICC)</li>
+        <li>YesMasters (Kevin Ward)</li>
+        <li>Steve Shull Performance Coaching</li>
+        <li>Dale Archdekin / Smart Sales Coaching</li>
+      </ul>
+    </div>
+    <div style="background:white;border-radius:10px;padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.06);">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#e67e22;margin-bottom:8px;">AI Coaching &amp; Practice</div>
+      <ul style="padding-left:14px;font-size:12px;line-height:1.8;opacity:0.75;">
+        <li>MaverickRE (AI call analysis + role-play)</li>
+        <li>SkySlope Ayce (AI goal-to-task coach)</li>
+        <li>ChatGPT / Claude (scripts, content, market analysis)</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<div class="footer">
+  <strong>Real Estate Agent Weekly Success Roadmap</strong><br>
+  Synthesized from: Tom Ferry Coaching &bull; Mike Ferry Organization &bull; Buffini &amp; Company &bull; Keller Williams MAPS/BOLD &bull; Icenhower Coaching &amp; Consulting &bull; YesMasters (Kevin Ward) &bull; Steve Shull Performance Coaching &bull; Dale Archdekin / Smart Sales Coaching &bull; SkySlope Ayce &bull; MaverickRE<br>
+  <br>
+  This roadmap is a living document. Review it quarterly. Adjust targets as your business grows. The system works when you work the system.
+</div>
+
+</body>
+</html>
